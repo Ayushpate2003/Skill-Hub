@@ -1,0 +1,2311 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1f1f1">
+    <title>Java Programming :: Objects and Collections
+    </title>
+    <meta name="description"
+        content="Aptitude questions and answers with explanations are provided for your competitive exams, placement interviews, and entrance tests.">
+    <link rel="shortcut icon" href="https://www.indiabix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/main.min.css?ver=1.04">
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404020101/show_ads_impl_fy2021.js?bust=31082433"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403250101/show_ads_impl_fy2021.js"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403270101/show_ads_impl_fy2021.js?bust=31082332"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E20ELFGHR5"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-E20ELFGHR5');</script>
+    <style>
+        .top_ad_unit,
+        .right_ad_unit,
+        .bottom_ad_unit {
+            min-width: 250px;
+            width: 100%;
+        }
+
+        ins.adsbygoogle {
+            background: transparent !important;
+        }
+    </style>
+    <script async="" src="https://fundingchoicesmessages.google.com/i/pub-0191447310372013?ers=1"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        nonce="pao_y7pIpyQovEpXG_CiRg">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+</head>
+
+<body class="">
+    <iframe name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe>
+    <aside class="sidebar-nav-wrapper">
+        <a class="navbar-brand" href="/index.html"> <img src="/skillhubtrend/assets/images/logo 1.png" alt="logo"
+                id="logo" style="text-align: center;
+           height: 250px; padding: 2px 25px;
+            margin-bottom: -5px;
+        "></a>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item"><a href="https://www.indiabix.com/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5">
+                                </path>
+                            </svg></span><span class="text">Home</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/aptitude/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Arithmetic
+                            Aptitude</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/data-interpretation/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Data
+                            Interpretation</span></a></li>
+                <!--<li class="divider"></li>-->
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-ability/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Ability</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Logical
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Nonverbal
+                            Reasoning</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/online-test/categories/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Online Tests</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/current-affairs/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Current
+                            Affairs</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/general-knowledge/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">General Knowledge</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/hr-interview/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">HR
+                            Interview</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/group-discussion/topics-with-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Group
+                            Discussion</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/placement-papers/companies/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Placement Papers</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/technical/interview-questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Technical
+                            Interview</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/mechanical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Mechanical
+                            Engineering</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/civil-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Civil
+                            Engineering</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electronics-and-communication-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">ECE</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electrical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">EEE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/computer-science/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">CSE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/engineering/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Read more…</span></a>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C
+                            Programming</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/cpp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C++</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-sharp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C#</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/java-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Java</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/database/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Database</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/networking/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Networking</span></a></li>
+                <!-- <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/microbiology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-dna"></i></span><span class="text">Microbiology</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biochemistry/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-checkbox-multiple-blank-circle"></i></span><span
+                            class="text">Biochemistry</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biotechnology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-circle-multiple-outline"></i></span><span
+                            class="text">Biotechnology</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/biochemical-engineering/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-chart-bubble"></i></span><span class="text">Biochemical
+                        </span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/number-puzzles/"><span class="icon"><i
+                                class="mdi mdi-checkerboard"></i></span><span class="text">Puzzles Quiz</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/sudoku/"><span class="icon"><i
+                                class="mdi mdi-grid"></i></span><span class="text">Sudoku</span></a></li> -->
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/contact-us"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z">
+                                </path>
+                            </svg></span><span class="text">Contact
+                            Us</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <main class="main-wrapper" style="height: auto !important; min-height: 0px !important;">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn">
+                                <button aria-label="Menu Toggle" id="menu-toggle" class="main-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="head-name">
+                                <a href="https://www.indiabix.com/"><img src="/skillhubtrend/assets/images/logo 2.png"
+                                        alt="logo" id="logo" style="text-align: center;
+                                    height: 56px; 
+                                     margin-bottom: -5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right d-flex align-items-center">
+                            <div class="header-search d-none d-sm-block" id="search-form-box">
+                                <form method="get" id="search-form" name="search form"
+                                    action="https://www.google.co.in/search" target="_blank">
+                                    <input type="hidden" name="sitesearch" value="www.indiabix.com">
+                                    <button aria-label="Search Submit"></button>
+
+                                </form>
+                            </div>
+                            <button aria-label="Search" id="btnSearch" class="header-button d-block d-sm-none">
+
+                            </button>
+                            <button aria-label="Page Share" id="btnShare" class="header-button"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5">
+                                    </path>
+                                </svg></button>
+                            <button aria-label="Theme Toggle" id="btnTheme" class="header-button"></button>
+                            <a href="https://www.indiabix.com/user/login/" id="btnLogin" class="header-button"
+                                aria-label="Login to stay connected with IndiaBIX!">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid" style="height: auto !important;">
+
+            <div class="row no-gutters">
+                <div class="title-wrapper">
+                    <div class="title d-flex flex-row">
+                        <!-- <span class="mdi mdi-language-java ib-text-title"></span> -->
+                        <div>
+                            <h1 class="flex-wrap w-100 add-color">Java Programming :: <span>Objects and
+                                    Collections</span></h1>
+                        </div>
+                    </div>
+                    <div class="card-style" style="height: auto !important;">
+
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Suppose that you would like to create an
+                                    instance of a new <i class="java-code">Map</i> that has an iteration order that is
+                                    the same as the iteration order of an existing instance of a <i
+                                        class="java-code">Map</i>. Which concrete implementation of the <i
+                                        class="java-code">Map</i> interface should be used for the new instance?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_128">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_128"><span id="lnkOptionLink_A_128"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_128">
+                                        <div class="flex-wrap">TreeMap</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_128"><span id="lnkOptionLink_B_128"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_128">
+                                        <div class="flex-wrap">HashMap</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_128"><span id="lnkOptionLink_C_128"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_128">
+                                        <div class="flex-wrap">LinkedHashMap</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_128"><span id="lnkOptionLink_D_128"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_128">
+                                        <div class="flex-wrap">The answer depends on the implementation of the existing
+                                            instance.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_128" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_128">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The iteration order of a <i class="java-code">Collection</i> is the order in
+                                            which an iterator moves through the elements of the <i
+                                                class="java-code">Collection</i>. The iteration order of a <i
+                                                class="java-code">LinkedHashMap</i> is determined by the order in which
+                                            elements are inserted.</p>
+                                        <p>When a new <i class="java-code">LinkedHashMap</i> is created by passing a
+                                            reference to an existing Collection to the constructor of a <i
+                                                class="java-code">LinkedHashMap</i> the <i
+                                                class="java-code">Collection.addAll</i> method will ultimately be
+                                            invoked.</p>
+                                        <p>The addAll method uses an iterator to the existing Collection to iterate
+                                            through the elements of the existing Collection and add each to the instance
+                                            of the new <i class="java-code">LinkedHashMap</i>.</p>
+                                        <p>Since the iteration order of the <i class="java-code">LinkedHashMap</i> is
+                                            determined by the order of insertion, the iteration order of the new <i
+                                                class="java-code">LinkedHashMap</i> must be the same as the interation
+                                            order of the old <i class="java-code">Collection</i>.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_128">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_128">
+                                    <textarea class="bix-report-txt" data-qid="128" name="txtBixReport_128"
+                                        id="txtBixReport_128" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_128" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_128"
+                                            data-sid="13" data-qid="128" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which class does not override the <i
+                                        class="java-code">equals()</i> and <i class="java-code">hashCode()</i> methods,
+                                    inheriting them directly from class Object?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_121">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_121"><span id="lnkOptionLink_A_121"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_121">
+                                        <div class="flex-wrap">java.lang.String</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_121"><span id="lnkOptionLink_B_121"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_121">
+                                        <div class="flex-wrap">java.lang.Double</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_121"><span id="lnkOptionLink_C_121"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_121">
+                                        <div class="flex-wrap">java.lang.StringBuffer</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_121"><span id="lnkOptionLink_D_121"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_121">
+                                        <div class="flex-wrap">java.lang.Character</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_121" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_121">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p><i class="java-code">java.lang.StringBuffer</i> is the only class in the list
+                                            that uses the default methods provided by class <i
+                                                class="java-code">Object</i>.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_121">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_121">
+                                    <textarea class="bix-report-txt" data-qid="121" name="txtBixReport_121"
+                                        id="txtBixReport_121" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_121" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_121"
+                                            data-sid="13" data-qid="121" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which collection class allows you to
+                                    grow or shrink its size and provides indexed access to its elements, but whose
+                                    methods are not synchronized?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_122">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_122"><span id="lnkOptionLink_A_122"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_122">
+                                        <div class="flex-wrap">java.util.HashSet</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_122"><span id="lnkOptionLink_B_122"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_122">
+                                        <div class="flex-wrap">java.util.LinkedHashSet</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_122"><span id="lnkOptionLink_C_122"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_122">
+                                        <div class="flex-wrap">java.util.List</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_122"><span id="lnkOptionLink_D_122"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_122">
+                                        <div class="flex-wrap">java.util.ArrayList</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_122" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_122">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>All of the collection classes allow you to grow or shrink the size of your
+                                            collection. <i class="java-code">ArrayList</i> provides an index to its
+                                            elements. The newer collection classes tend not to have synchronized
+                                            methods. Vector is an older implementation of <i
+                                                class="java-code">ArrayList</i> functionality and has synchronized
+                                            methods; it is slower than <i class="java-code">ArrayList</i>.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_122">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_122">
+                                    <textarea class="bix-report-txt" data-qid="122" name="txtBixReport_122"
+                                        id="txtBixReport_122" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_122" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_122"
+                                            data-sid="13" data-qid="122" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">You need to store elements in a
+                                    collection that guarantees that no duplicates are stored and all elements can be
+                                    accessed in natural order. Which interface provides that capability?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_129">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_129"><span id="lnkOptionLink_A_129"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_129">
+                                        <div class="flex-wrap">java.util.Map</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_129"><span id="lnkOptionLink_B_129"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_129">
+                                        <div class="flex-wrap">java.util.Set</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_129"><span id="lnkOptionLink_C_129"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_129">
+                                        <div class="flex-wrap">java.util.List</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_129"><span id="lnkOptionLink_D_129"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_129">
+                                        <div class="flex-wrap">java.util.Collection</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_129" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_129">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct. A set is a collection that contains no duplicate
+                                            elements. The iterator returns the elements in no particular order (unless
+                                            this set is an instance of some class that provides a guarantee). A map
+                                            cannot contain duplicate keys but it may contain duplicate values. <i
+                                                class="java-code">List</i> and <i class="java-code">Collection</i> allow
+                                            duplicate elements.</p>
+                                        <p>Option A is wrong. A map is an object that maps keys to values. A map cannot
+                                            contain duplicate keys; each key can map to at most one value. The <i
+                                                class="java-code">Map</i> interface provides three collection views,
+                                            which allow a map's contents to be viewed as a set of keys, collection of
+                                            values, or set of key-value mappings. The order of a map is defined as the
+                                            order in which the iterators on the map's collection views return their
+                                            elements. Some map implementations, like the <i
+                                                class="java-code">TreeMap</i> class, make specific guarantees as to
+                                            their order (ascending key order); others, like the <i
+                                                class="java-code">HashMap</i> class, do not (does not guarantee that the
+                                            order will remain constant over time).</p>
+                                        <p>Option C is wrong. A list is an ordered collection (also known as a
+                                            sequence). The user of this interface has precise control over where in the
+                                            list each element is inserted. The user can access elements by their integer
+                                            index (position in the list), and search for elements in the list. Unlike
+                                            sets, lists typically allow duplicate elements.</p>
+                                        <p>Option D is wrong. A collection is also known as a sequence. The user of this
+                                            interface has precise control over where in the list each element is
+                                            inserted. The user can access elements by their integer index (position in
+                                            the list), and search for elements in the list. Unlike sets, lists typically
+                                            allow duplicate elements.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_129">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_129">
+                                    <textarea class="bix-report-txt" data-qid="129" name="txtBixReport_129"
+                                        id="txtBixReport_129" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_129" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_129"
+                                            data-sid="13" data-qid="129" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which interface does <i
+                                        class="java-code">java.util.Hashtable</i> implement?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_132">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_132"><span id="lnkOptionLink_A_132"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_132">
+                                        <div class="flex-wrap">Java.util.Map</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_132"><span id="lnkOptionLink_B_132"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_132">
+                                        <div class="flex-wrap">Java.util.List</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_132"><span id="lnkOptionLink_C_132"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_132">
+                                        <div class="flex-wrap">Java.util.HashTable</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_132"><span id="lnkOptionLink_D_132"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_132">
+                                        <div class="flex-wrap">Java.util.Collection</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_132" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_132">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Hash table based implementation of the <i class="java-code">Map</i>
+                                            interface.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_132">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_132">
+                                    <textarea class="bix-report-txt" data-qid="132" name="txtBixReport_132"
+                                        id="txtBixReport_132" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_132" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_132"
+                                            data-sid="13" data-qid="132" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;"
+                                data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto"
+                                data-full-width-responsive="true" data-adsbygoogle-status="done"
+                                data-ad-status="unfilled">
+                                <div id="aswift_2_host"
+                                    style="border: none; height: 0px; width: 667px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" browsingtopics="true"
+                                        style="left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 0px;"
+                                        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                        width="667" height="0" frameborder="0" marginwidth="0" marginheight="0"
+                                        vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                                        allow="attribution-reporting"
+                                        src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=2087839902&amp;adf=844190542&amp;pi=t.ma~as.4948233444&amp;w=667&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712399018&amp;rafmt=1&amp;format=667x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fobjects-and-collections%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuNjMxMi4xMDYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEyMy4wLjYzMTIuMTA2Il0sWyJOb3Q6QS1CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTIzLjAuNjMxMi4xMDYiXV0sMF0.&amp;dt=1712399018407&amp;bpp=2&amp;bdt=325&amp;idt=76&amp;shv=r20240403&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D746453f5651bc8c1%3AT%3D1711723499%3ART%3D1712399001%3AS%3DALNI_Mb5Zfpyu3PcsuR7_WN5k0oT-umK8w&amp;gpic=UID%3D00000d74b9319e22%3AT%3D1711723499%3ART%3D1712399001%3AS%3DALNI_MZ49unoi_M4TUJwiSrsEoXUqTwxyA&amp;eo_id_str=ID%3Defc5e82f828cb451%3AT%3D1711723499%3ART%3D1712399001%3AS%3DAA-AfjZMpc3An_Ds4AHK2qVPJg_w&amp;prev_fmts=0x0%2C699x280&amp;nras=1&amp;correlator=2717714664397&amp;frm=20&amp;pv=1&amp;ga_vid=1020698828.1711723496&amp;ga_sid=1712399019&amp;ga_hid=1777182661&amp;ga_fc=1&amp;u_tz=330&amp;u_his=37&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.375&amp;dmc=8&amp;adx=316&amp;ady=2278&amp;biw=1381&amp;bih=632&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C31082301%2C44795922%2C95329440%2C95329570%2C31081717%2C31082249%2C31078663%2C31078668%2C31078670&amp;oid=2&amp;pvsid=595090751949229&amp;tmod=1644019206&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fquestions-and-answers%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1396%2C632&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=179"
+                                        data-google-container-id="a!3" tabindex="0" title="Advertisement"
+                                        aria-label="Advertisement" data-google-query-id="CNzYyrWvrYUDFUlNwgUdapEDTg"
+                                        data-load-complete="true"></iframe>
+                                </div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- ------------------------------- -->
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0">Finding the output</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">String</span> foo <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token class-name">String</span> bar <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token class-name">String</span> baz <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"baz = "</span> <span class="token operator">+</span> baz<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 8 */</span>
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                    <p>And the command line invocation:</p>
+                                    <p>&gt; <i class="java-code">java Test red green blue</i></p>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_138">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_138"><span id="lnkOptionLink_A_138"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_138">
+                                        <div class="flex-wrap">baz =</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_138"><span id="lnkOptionLink_B_138"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_138">
+                                        <div class="flex-wrap">baz = null</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_138"><span id="lnkOptionLink_C_138"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_138">
+                                        <div class="flex-wrap">baz = blue</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_138"><span id="lnkOptionLink_D_138"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_138">
+                                        <div class="flex-wrap">Runtime Exception</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_138" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_138">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>When running the program you entered 3 arguments "red", "green" and "blue".
+                                            When dealing with arrays in java you must remember ALL ARRAYS IN JAVA ARE
+                                            ZERO BASED therefore <i class="java-code">args[0]</i> becomes "red", <i
+                                                class="java-code">args[1]</i> becomes "green" and <i
+                                                class="java-code">args[2]</i> becomes "blue".</p>
+                                        <p>When the program entcounters line 8 above at runtime it looks for <i
+                                                class="java-code">args[3]</i> which has never been created therefore you
+                                            get an</p>
+                                        <p><i class="java-code">ArrayIndexOutOfBoundsException</i> at runtime.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_138">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_138">
+                                    <textarea class="bix-report-txt" data-qid="138" name="txtBixReport_138"
+                                        id="txtBixReport_138" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_138" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_138"
+                                            data-sid="13" data-qid="138" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">String</span> str <span class="token operator">=</span> NULL<span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_141">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_141"><span id="lnkOptionLink_A_141"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_141">
+                                        <div class="flex-wrap">NULL</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_141"><span id="lnkOptionLink_B_141"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_141">
+                                        <div class="flex-wrap">Compile Error</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_141"><span id="lnkOptionLink_C_141"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_141">
+                                        <div class="flex-wrap">Code runs but no output</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_141"><span id="lnkOptionLink_D_141"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_141">
+                                        <div class="flex-wrap">Runtime Exception</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_141" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_141">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct because to set the value of a <i
+                                                class="java-code">String</i> variable to null you must use "<i
+                                                class="java-code">null</i>" and not "<i class="java-code">NULL</i>".</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_141">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_141">
+                                    <textarea class="bix-report-txt" data-qid="141" name="txtBixReport_141"
+                                        id="txtBixReport_141" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_141" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_141"
+                                            data-sid="13" data-qid="141" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">foo</span><span class="token punctuation">;</span> 
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Vector</span></span><span class="token punctuation">;</span> <span class="token comment">/* Line 2 */</span>
+<span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token class-name">MyVector</span> <span class="token keyword">extends</span> <span class="token class-name">Vector</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">/* Line 5 */</span>
+<span class="token keyword">public</span> <span class="token class-name">MyVector</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyNewVector</span> <span class="token keyword">extends</span> <span class="token class-name">MyVector</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token class-name">MyNewVector</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    i <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment">/* Line 15 */</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span> args <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token class-name">MyVector</span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyNewVector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 19 */</span>
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_136">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_136"><span id="lnkOptionLink_A_136"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_136">
+                                        <div class="flex-wrap">Compilation will succeed.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_136"><span id="lnkOptionLink_B_136"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_136">
+                                        <div class="flex-wrap">Compilation will fail at line 3.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_136"><span id="lnkOptionLink_C_136"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_136">
+                                        <div class="flex-wrap">Compilation will fail at line 5.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_136"><span id="lnkOptionLink_D_136"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_136">
+                                        <div class="flex-wrap">Compilation will fail at line 15.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_136" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_136">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct. The compiler complains with the error "modifier private
+                                            not allowed here". The class is created private and is being used by another
+                                            class on line 19.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_136">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_136">
+                                    <textarea class="bix-report-txt" data-qid="136" name="txtBixReport_136"
+                                        id="txtBixReport_136" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_136" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_136"
+                                            data-sid="13" data-qid="136" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">;</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_137">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_137"><span id="lnkOptionLink_A_137"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_137">
+                                        <div class="flex-wrap">0&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_137"><span id="lnkOptionLink_B_137"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_137">
+                                        <div class="flex-wrap">null</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_137"><span id="lnkOptionLink_C_137"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_137">
+                                        <div class="flex-wrap">Compile Error</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_137"><span id="lnkOptionLink_D_137"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_137">
+                                        <div class="flex-wrap"><i class="java-code">NullPointerException</i> at runtime
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_137" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_137">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>In the above code the array reference variable <i class="java-code">x</i> has
+                                            been declared but it has not been instantiated i.e. the new statement is
+                                            missing, for example:</p>
+                                        <p><i class="java-code">private static int[]x = new int[5];</i></p>
+                                        <p><i class="java-code">private static int[x]</i> declares a static i.e. class
+                                            level array.</p>
+                                        <p>the "<i class="java-code">new</i>" keyword is the word that actually creates
+                                            said array.</p>
+                                        <p><i class="java-code">int[5]</i> in association with the new sets the size of
+                                            the array. so since the above code contains no new or size decalarations
+                                            when you try and access <i class="java-code">x[0]</i> you are trying to
+                                            access a member of an array that has been declared but not intialized hence
+                                            you get a <i class="java-code">NullPointerException</i> at runtime.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_137">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_137">
+                                    <textarea class="bix-report-txt" data-qid="137" name="txtBixReport_137"
+                                        id="txtBixReport_137" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_137" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_137"
+                                            data-sid="13" data-qid="137" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span> 
+<span class="token keyword">class</span> <span class="token class-name">I</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">Object</span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token keyword">instanceof</span> <span class="token class-name">List</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token keyword">instanceof</span> <span class="token class-name">Iterator</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>i <span class="token keyword">instanceof</span> <span class="token class-name">ListIterator</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_134">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_134"><span id="lnkOptionLink_A_134"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_134">
+                                        <div class="flex-wrap">Prints: false, false, false</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_134"><span id="lnkOptionLink_B_134"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_134">
+                                        <div class="flex-wrap">Prints: false, false, true</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_134"><span id="lnkOptionLink_C_134"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_134">
+                                        <div class="flex-wrap">Prints: false, true, false</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_134"><span id="lnkOptionLink_D_134"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_134">
+                                        <div class="flex-wrap">Prints: false, true, true</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_134" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_134">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The <i class="java-code">iterator()</i> method returns an iterator over the
+                                            elements in the list in proper sequence, it doesn't return a <i
+                                                class="java-code">List</i> or a <i class="java-code">ListIterator</i>
+                                            object.</p>
+                                        <p>A <i class="java-code">ListIterator</i> can be obtained by invoking the <i
+                                                class="java-code">listIterator</i> method.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_134">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_134">
+                                    <textarea class="bix-report-txt" data-qid="134" name="txtBixReport_134"
+                                        id="txtBixReport_134" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_134" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_134"
+                                            data-sid="13" data-qid="134" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- ------------------------ -->
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0"> Pointing out the correct statements</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test1</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Test2</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashcode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>value<span class="token operator">^</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                    which statement is true?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_149">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_149"><span id="lnkOptionLink_A_149"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_149">
+                                        <div class="flex-wrap"><i class="java-code">class Test1</i> will not compile.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_149"><span id="lnkOptionLink_B_149"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_149">
+                                        <div class="flex-wrap">The <i class="java-code">Test1 hashCode()</i> method is
+                                            more efficient than the <i class="java-code">Test2 hashCode()</i> method.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_149"><span id="lnkOptionLink_C_149"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_149">
+                                        <div class="flex-wrap">The <i class="java-code">Test1 hashCode()</i> method is
+                                            less efficient than the <i class="java-code">Test2 hashCode()</i> method.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_149"><span id="lnkOptionLink_D_149"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_149">
+                                        <div class="flex-wrap"><i class="java-code">class Test2</i> will not compile.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_149" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_149">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The so-called "hashing algorithm" implemented by <i class="java-code">class
+                                                Test1</i> will always return the same value, 42, which is legal but
+                                            which will place all of the hash table entries into a single bucket, the
+                                            most inefficient setup possible.</p>
+                                        <p>Option A and D are incorrect because these classes are legal.</p>
+                                        <p>Option B is incorrect based on the logic described above.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_149">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_149">
+                                    <textarea class="bix-report-txt" data-qid="149" name="txtBixReport_149"
+                                        id="txtBixReport_149" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_149" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_149"
+                                            data-sid="13" data-qid="149" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which statement is true for the class <i
+                                        class="java-code">java.util.HashSet</i>?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_144">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_144"><span id="lnkOptionLink_A_144"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_144">
+                                        <div class="flex-wrap">The elements in the collection are ordered.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_144"><span id="lnkOptionLink_B_144"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_144">
+                                        <div class="flex-wrap">The collection is guaranteed to be immutable.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_144"><span id="lnkOptionLink_C_144"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_144">
+                                        <div class="flex-wrap">The elements in the collection are guaranteed to be
+                                            unique.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_144"><span id="lnkOptionLink_D_144"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_144">
+                                        <div class="flex-wrap">The elements in the collection are accessed using a
+                                            unique key.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_144" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_144">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option C is correct. <i class="java-code">HashSet</i> implements the <i
+                                                class="java-code">Set</i> interface and the <i class="java-code">Set</i>
+                                            interface specifies collection that contains no duplicate elements.</p>
+                                        <p>Option A is wrong. <i class="java-code">HashSet</i> makes no guarantees as to
+                                            the iteration order of the set; in particular, it does not guarantee that
+                                            the order will remain constant over time.</p>
+                                        <p>Option B is wrong. The set can be modified.</p>
+                                        <p>Option D is wrong. This is a <i class="java-code">Set</i> and not a <i
+                                                class="java-code">Map</i>.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_144">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_144">
+                                    <textarea class="bix-report-txt" data-qid="144" name="txtBixReport_144"
+                                        id="txtBixReport_144" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_144" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_144"
+                                            data-sid="13" data-qid="144" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which of the following statements about
+                                    the <i class="java-code">hashcode()</i> method are incorrect?
+                                    <ol class="java-ol-1234">
+                                        <li>The value returned by <i class="java-code">hashcode()</i> is used in some
+                                            collection classes to help locate objects. </li>
+                                        <li>The <i class="java-code">hashcode()</i> method is required to return a
+                                            positive <i class="java-code">int</i> value. </li>
+                                        <li>The <i class="java-code">hashcode()</i> method in the <i
+                                                class="java-code">String</i> class is the one inherited from <i
+                                                class="java-code">Object</i>. </li>
+                                        <li>Two new empty String objects will produce identical hashcodes.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_146">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_146"><span id="lnkOptionLink_A_146"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_146">
+                                        <div class="flex-wrap">1 and 2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_146"><span id="lnkOptionLink_B_146"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_146">
+                                        <div class="flex-wrap">2 and 3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_146"><span id="lnkOptionLink_C_146"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_146">
+                                        <div class="flex-wrap">3 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_146"><span id="lnkOptionLink_D_146"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_146">
+                                        <div class="flex-wrap">1 and 4</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_146" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_146">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>(2) is an incorrect statement because there is no such requirement.</p>
+                                        <p>(3) is an incorrect statement and therefore a correct answer because the
+                                            hashcode for a string is computed from the characters in the string.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_146">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_146">
+                                    <textarea class="bix-report-txt" data-qid="146" name="txtBixReport_146"
+                                        id="txtBixReport_146" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_146" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_146"
+                                            data-sid="13" data-qid="146" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What two statements are true about
+                                    properly overridden <i class="java-code">hashCode()</i> and <i
+                                        class="java-code">equals()</i> methods?
+                                    <ol class="java-ol-1234">
+                                        <li><i class="java-code">hashCode()</i> doesn't have to be overridden if <i
+                                                class="java-code">equals()</i> is.</li>
+                                        <li><i class="java-code">equals()</i> doesn't have to be overridden if <i
+                                                class="java-code">hashCode()</i> is.</li>
+                                        <li><i class="java-code">hashCode()</i> can always return the same value,
+                                            regardless of the object that invoked it.</li>
+                                        <li><i class="java-code">equals()</i> can be true even if it's comparing
+                                            different objects.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_143">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_143"><span id="lnkOptionLink_A_143"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_143">
+                                        <div class="flex-wrap">1 and 2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_143"><span id="lnkOptionLink_B_143"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_143">
+                                        <div class="flex-wrap">2 and 3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_143"><span id="lnkOptionLink_C_143"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_143">
+                                        <div class="flex-wrap">3 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_143"><span id="lnkOptionLink_D_143"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_143">
+                                        <div class="flex-wrap">1 and 3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_143" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_143">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>(3) and (4) are correct.</p>
+                                        <p>(1) and (2) are incorrect because by contract <i
+                                                class="java-code">hashCode()</i> and <i class="java-code">equals()</i>
+                                            can't be overridden unless both are overridden.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_143">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_143">
+                                    <textarea class="bix-report-txt" data-qid="143" name="txtBixReport_143"
+                                        id="txtBixReport_143" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_143" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_143"
+                                            data-sid="13" data-qid="143" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which two statements are true about
+                                    comparing two instances of the same class, given that the <i
+                                        class="java-code">equals()</i> and <i class="java-code">hashCode()</i> methods
+                                    have been properly overridden?
+                                    <ol class="java-ol-1234">
+                                        <li>If the <i class="java-code">equals()</i> method returns true, the <i
+                                                class="java-code">hashCode()</i> comparison <i class="java-code">==</i>
+                                            must return true.</li>
+                                        <li>If the <i class="java-code">equals()</i> method returns false, the <i
+                                                class="java-code">hashCode()</i> comparison <i class="java-code">!=</i>
+                                            must return true.</li>
+                                        <li>If the <i class="java-code">hashCode()</i> comparison <i
+                                                class="java-code">==</i> returns true, the <i
+                                                class="java-code">equals()</i> method must return true.</li>
+                                        <li>If the <i class="java-code">hashCode()</i> comparison <i
+                                                class="java-code">==</i> returns true, the <i
+                                                class="java-code">equals()</i> method might return true.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_147">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_147"><span id="lnkOptionLink_A_147"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_147">
+                                        <div class="flex-wrap">1 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_147"><span id="lnkOptionLink_B_147"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_147">
+                                        <div class="flex-wrap">2 and 3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_147"><span id="lnkOptionLink_C_147"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_147">
+                                        <div class="flex-wrap">3 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_147"><span id="lnkOptionLink_D_147"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_147">
+                                        <div class="flex-wrap">1 and 3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_147" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_147">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>(1) is a restatement of the <i class="java-code">equals()</i> and <i
+                                                class="java-code">hashCode()</i> contract. (4) is true because if the <i
+                                                class="java-code">hashCode()</i> comparison returns <i
+                                                class="java-code">==</i>, the two objects might or might not be equal.
+                                        </p>
+                                        <p>(2) and (3) are incorrect because the <i class="java-code">hashCode()</i>
+                                            method is very flexible in its return values, and often two dissimilar
+                                            objects can return the same hash code value.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_147">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_147">
+                                    <textarea class="bix-report-txt" data-qid="147" name="txtBixReport_147"
+                                        id="txtBixReport_147" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_147" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_147"
+                                            data-sid="13" data-qid="147" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;"
+                                data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto"
+                                data-full-width-responsive="true" data-adsbygoogle-status="done"
+                                data-ad-status="unfilled">
+                                <div id="aswift_2_host"
+                                    style="border: none; height: 0px; width: 667px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" browsingtopics="true"
+                                        style="left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 0px;"
+                                        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                        width="667" height="0" frameborder="0" marginwidth="0" marginheight="0"
+                                        vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                                        allow="attribution-reporting"
+                                        src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=2087839902&amp;adf=844190542&amp;pi=t.ma~as.4948233444&amp;w=667&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712399338&amp;rafmt=1&amp;format=667x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fobjects-and-collections%2F014001&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuNjMxMi4xMDYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEyMy4wLjYzMTIuMTA2Il0sWyJOb3Q6QS1CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTIzLjAuNjMxMi4xMDYiXV0sMF0.&amp;dt=1712399338470&amp;bpp=2&amp;bdt=309&amp;idt=62&amp;shv=r20240403&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D746453f5651bc8c1%3AT%3D1711723499%3ART%3D1712399327%3AS%3DALNI_Mb5Zfpyu3PcsuR7_WN5k0oT-umK8w&amp;gpic=UID%3D00000d74b9319e22%3AT%3D1711723499%3ART%3D1712399327%3AS%3DALNI_MZ49unoi_M4TUJwiSrsEoXUqTwxyA&amp;eo_id_str=ID%3Defc5e82f828cb451%3AT%3D1711723499%3ART%3D1712399327%3AS%3DAA-AfjZMpc3An_Ds4AHK2qVPJg_w&amp;prev_fmts=0x0%2C699x280&amp;nras=1&amp;correlator=3223535740430&amp;frm=20&amp;pv=1&amp;ga_vid=1020698828.1711723496&amp;ga_sid=1712399339&amp;ga_hid=1090244798&amp;ga_fc=1&amp;u_tz=330&amp;u_his=39&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.375&amp;dmc=8&amp;adx=316&amp;ady=2998&amp;biw=1381&amp;bih=632&amp;scr_x=0&amp;scr_y=1&amp;eid=44759876%2C44759927%2C44759842%2C44798934%2C95326316%2C95329439%2C95329571%2C31082249%2C21065725%2C31078663%2C31078668%2C31078670&amp;oid=2&amp;pvsid=3995633137432446&amp;tmod=1644019206&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fobjects-and-collections%2F013001&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1396%2C632&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=363"
+                                        data-google-container-id="a!3" tabindex="0" title="Advertisement"
+                                        aria-label="Advertisement" data-google-query-id="CIiHnc6wrYUDFdndcwEd37EDwA"
+                                        data-load-complete="true"></iframe></div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- -------------------------- -->
+                </div>
+    </main>
+
+    <script src="https://www.indiabix.com/_files/js/util/bootstrap.bundle.min.js"></script>
+    <script src="https://www.indiabix.com/_files/js/main.min.js?ver=1.0"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+    <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"
+        data-ad-status="unfilled">
+        <div id="aswift_0_host"
+            style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
+            <iframe id="aswift_0" name="aswift_0"
+                style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                scrolling="no"
+                src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0191447310372013&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1712043588&amp;plat=1%3A16777216%2C2%3A16777216%2C3%3A16%2C4%3A16%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2FA11.1%2Fwww.indiabix.com%2Faptitude%2Fquestions-and-answers%2Findex.html&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTIyLjAuMjM2NS45MiIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuMTI5Il0sWyJOb3QoQTpCcmFuZCIsIjI0LjAuMC4wIl0sWyJNaWNyb3NvZnQgRWRnZSIsIjEyMi4wLjIzNjUuOTIiXV0sMF0.&amp;dt=1712125749846&amp;bpp=5&amp;bdt=199&amp;idt=107&amp;shv=r20240328&amp;mjsv=m202403280101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=673421660251&amp;frm=20&amp;pv=2&amp;ga_vid=2074399148.1712042278&amp;ga_sid=1712125750&amp;ga_hid=677183597&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1897&amp;bih=932&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C44798934%2C95325427%2C31082370%2C95320376%2C95328825&amp;oid=2&amp;pvsid=3907513776012983&amp;tmod=789056828&amp;wsm=1&amp;uas=0&amp;nvt=3&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1040%2C1912%2C932&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=149"
+                data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement"
+                data-load-complete="true"></iframe>
+        </div>
+    </ins><iframe name="googlefcInactive" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support-9
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>

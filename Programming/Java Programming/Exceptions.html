@@ -1,0 +1,1920 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1f1f1">
+    <title>Java Programming :: Exceptions
+    </title>
+    <meta name="description"
+        content="Aptitude questions and answers with explanations are provided for your competitive exams, placement interviews, and entrance tests.">
+    <link rel="shortcut icon" href="https://www.indiabix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/main.min.css?ver=1.04">
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404020101/show_ads_impl_fy2021.js?bust=31082433"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403250101/show_ads_impl_fy2021.js"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403270101/show_ads_impl_fy2021.js?bust=31082332"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E20ELFGHR5"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-E20ELFGHR5');</script>
+    <style>
+        .top_ad_unit,
+        .right_ad_unit,
+        .bottom_ad_unit {
+            min-width: 250px;
+            width: 100%;
+        }
+
+        ins.adsbygoogle {
+            background: transparent !important;
+        }
+    </style>
+    <script async="" src="https://fundingchoicesmessages.google.com/i/pub-0191447310372013?ers=1"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        nonce="pao_y7pIpyQovEpXG_CiRg">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+</head>
+
+<body class="">
+    <iframe name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe>
+    <aside class="sidebar-nav-wrapper">
+        <a class="navbar-brand" href="/index.html"> <img src="/skillhubtrend/assets/images/logo 1.png" alt="logo"
+                id="logo" style="text-align: center;
+           height: 250px; padding: 2px 25px;
+            margin-bottom: -5px;
+        "></a>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item"><a href="https://www.indiabix.com/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5">
+                                </path>
+                            </svg></span><span class="text">Home</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/aptitude/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Arithmetic
+                            Aptitude</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/data-interpretation/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Data
+                            Interpretation</span></a></li>
+                <!--<li class="divider"></li>-->
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-ability/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Ability</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Logical
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Nonverbal
+                            Reasoning</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/online-test/categories/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Online Tests</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/current-affairs/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Current
+                            Affairs</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/general-knowledge/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">General Knowledge</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/hr-interview/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">HR
+                            Interview</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/group-discussion/topics-with-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Group
+                            Discussion</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/placement-papers/companies/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Placement Papers</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/technical/interview-questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Technical
+                            Interview</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/mechanical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Mechanical
+                            Engineering</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/civil-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Civil
+                            Engineering</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electronics-and-communication-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">ECE</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electrical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">EEE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/computer-science/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">CSE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/engineering/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Read more…</span></a>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C
+                            Programming</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/cpp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C++</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-sharp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C#</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/java-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Java</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/database/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Database</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/networking/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Networking</span></a></li>
+                <!-- <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/microbiology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-dna"></i></span><span class="text">Microbiology</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biochemistry/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-checkbox-multiple-blank-circle"></i></span><span
+                            class="text">Biochemistry</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biotechnology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-circle-multiple-outline"></i></span><span
+                            class="text">Biotechnology</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/biochemical-engineering/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-chart-bubble"></i></span><span class="text">Biochemical
+                        </span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/number-puzzles/"><span class="icon"><i
+                                class="mdi mdi-checkerboard"></i></span><span class="text">Puzzles Quiz</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/sudoku/"><span class="icon"><i
+                                class="mdi mdi-grid"></i></span><span class="text">Sudoku</span></a></li> -->
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/contact-us"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z">
+                                </path>
+                            </svg></span><span class="text">Contact
+                            Us</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <main class="main-wrapper" style="height: auto !important; min-height: 0px !important;">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn">
+                                <button aria-label="Menu Toggle" id="menu-toggle" class="main-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="head-name">
+                                <a href="https://www.indiabix.com/"><img src="/skillhubtrend/assets/images/logo 2.png"
+                                        alt="logo" id="logo" style="text-align: center;
+                                    height: 56px; 
+                                     margin-bottom: -5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right d-flex align-items-center">
+                            <div class="header-search d-none d-sm-block" id="search-form-box">
+                                <form method="get" id="search-form" name="search form"
+                                    action="https://www.google.co.in/search" target="_blank">
+                                    <input type="hidden" name="sitesearch" value="www.indiabix.com">
+                                    <button aria-label="Search Submit"></button>
+
+                                </form>
+                            </div>
+                            <button aria-label="Search" id="btnSearch" class="header-button d-block d-sm-none">
+
+                            </button>
+                            <button aria-label="Page Share" id="btnShare" class="header-button"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5">
+                                    </path>
+                                </svg></button>
+                            <button aria-label="Theme Toggle" id="btnTheme" class="header-button"></button>
+                            <a href="https://www.indiabix.com/user/login/" id="btnLogin" class="header-button"
+                                aria-label="Login to stay connected with IndiaBIX!">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid" style="height: auto !important;">
+
+            <div class="row no-gutters">
+                <div class="title-wrapper">
+                    <div class="title d-flex flex-row">
+                        <!-- <span class="mdi mdi-language-java ib-text-title"></span> -->
+                        <div>
+                            <h1 class="flex-wrap w-100 add-color">Java Programming :: <span>Exceptions</span></h1>
+                        </div>
+                    </div>
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0"> Finding the output</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span> 
+<span class="token punctuation">{</span>  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token string">"Finally"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_106">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_106"><span id="lnkOptionLink_A_106"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_106">
+                                        <div class="flex-wrap">Finally</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_106"><span id="lnkOptionLink_B_106"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_106">
+                                        <div class="flex-wrap">Compilation fails.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_106"><span id="lnkOptionLink_C_106"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_106">
+                                        <div class="flex-wrap">The code runs with no output.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_106"><span id="lnkOptionLink_D_106"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_106">
+                                        <div class="flex-wrap">An exception is thrown at runtime.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_106" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_106">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        If you put a finally block after a try and its associated catch blocks, then
+                                        once execution enters the try block, the code in that finally block will
+                                        definitely be executed except in the following circumstances:
+                                        <ol class="java-ol-1234">
+                                            <li>An exception arising in the finally block itself.</li>
+                                            <li>The death of the thread.</li>
+                                            <li>The use of <i class="java-code">System.exit()</i></li>
+                                            <li>Turning off the power to the CPU.</li>
+                                        </ol>
+                                        <p>I suppose the last three could be classified as VM shutdown.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_106">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_106">
+                                    <textarea class="bix-report-txt" data-qid="106" name="txtBixReport_106"
+                                        id="txtBixReport_106" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_106" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_106"
+                                            data-sid="13" data-qid="106" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">try</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">5</span> <span class="token operator">/</span> x<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Exception"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ArithmeticException</span> ae<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" Arithmetic Exception"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"finished"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_107">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_107"><span id="lnkOptionLink_A_107"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_107">
+                                        <div class="flex-wrap">finished</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_107"><span id="lnkOptionLink_B_107"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_107">
+                                        <div class="flex-wrap">Exception</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_107"><span id="lnkOptionLink_C_107"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_107">
+                                        <div class="flex-wrap">Compilation fails.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_107"><span id="lnkOptionLink_D_107"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_107">
+                                        <div class="flex-wrap">Arithmetic Exception</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_107" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_107">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Compilation fails because <i class="java-code">ArithmeticException</i> has
+                                            already been caught. <i class="java-code">ArithmeticException</i> is a
+                                            subclass of <i class="java-code">java.lang.Exception</i>, by time the <i
+                                                class="java-code">ArithmeticException</i> has been specified it has
+                                            already been caught by the <i class="java-code">Exception</i> class.</p>
+                                        <p>If <i class="java-code">ArithmeticException</i> appears before <i
+                                                class="java-code">Exception</i>, then the file will compile. When
+                                            catching exceptions the more specific exceptions must be listed before the
+                                            more general (the subclasses must be caught before the superclasses).</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_107">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_107">
+                                    <textarea class="bix-report-txt" data-qid="107" name="txtBixReport_107"
+                                        id="txtBixReport_107" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_107" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_107"
+                                            data-sid="13" data-qid="107" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">X</span> 
+<span class="token punctuation">{</span>  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span>
+        <span class="token function">badMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>  
+    <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">badMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 22 */</span>
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_110">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_110"><span id="lnkOptionLink_A_110"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_110">
+                                        <div class="flex-wrap">ABCD</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_110"><span id="lnkOptionLink_B_110"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_110">
+                                        <div class="flex-wrap">Compilation fails.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_110"><span id="lnkOptionLink_C_110"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_110">
+                                        <div class="flex-wrap">C is printed before exiting with an error message.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_110"><span id="lnkOptionLink_D_110"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_110">
+                                        <div class="flex-wrap">BC is printed before exiting with an error message.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_110" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_110">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p><i class="java-code">Error</i> is thrown but not recognised line(22) because
+                                            the only catch attempts to catch an <i class="java-code">Exception</i> and
+                                            <i class="java-code">Exception</i> is not a superclass of <i
+                                                class="java-code">Error</i>. Therefore only the code in the <i
+                                                class="java-code">finally</i> statement can be run before exiting with a
+                                            runtime error (Exception in thread "main" <i
+                                                class="java-code">java.lang.Error</i>).
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_110">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_110">
+                                    <textarea class="bix-report-txt" data-qid="110" name="txtBixReport_110"
+                                        id="txtBixReport_110" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_110" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_110"
+                                            data-sid="13" data-qid="110" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">X</span> 
+<span class="token punctuation">{</span>  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span>
+        <span class="token function">badMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">RuntimeException</span> ex<span class="token punctuation">)</span> <span class="token comment">/* Line 10 */</span>
+    <span class="token punctuation">{</span> 
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex1<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span> 
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">badMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_112">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_112"><span id="lnkOptionLink_A_112"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_112">
+                                        <div class="flex-wrap">BD</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_112"><span id="lnkOptionLink_B_112"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_112">
+                                        <div class="flex-wrap">BCD</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_112"><span id="lnkOptionLink_C_112"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_112">
+                                        <div class="flex-wrap">BDE</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_112"><span id="lnkOptionLink_D_112"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_112">
+                                        <div class="flex-wrap">BCDE</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_112" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_112">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>A Run time exception is thrown and caught in the catch statement on line 10.
+                                            All the code after the finally statement is run because the exception has
+                                            been caught.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_112">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_112">
+                                    <textarea class="bix-report-txt" data-qid="112" name="txtBixReport_112"
+                                        id="txtBixReport_112" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_112" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_112"
+                                            data-sid="13" data-qid="112" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RTExcept</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> throwit <span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"throwit "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">throwit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> re <span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"caught "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"finally "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"after "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_105">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_105"><span id="lnkOptionLink_A_105"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_105">
+                                        <div class="flex-wrap">hello throwit caught</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_105"><span id="lnkOptionLink_B_105"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_105">
+                                        <div class="flex-wrap">Compilation fails</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_105"><span id="lnkOptionLink_C_105"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_105">
+                                        <div class="flex-wrap">hello throwit <i class="java-code">RuntimeException</i>
+                                            caught after</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_105"><span id="lnkOptionLink_D_105"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_105">
+                                        <div class="flex-wrap">hello throwit caught finally after</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_105" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_105">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The <i class="java-code">main()</i> method properly catches and handles the
+                                            <i class="java-code">RuntimeException</i> in the catch block, finally runs
+                                            (as it always does), and then the code returns to normal.
+                                        </p>
+                                        <p>A, B and C are incorrect based on the program logic described above. Remember
+                                            that properly handled exceptions do not cause the program to stop executing.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_105">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_105">
+                                    <textarea class="bix-report-txt" data-qid="105" name="txtBixReport_105"
+                                        id="txtBixReport_105" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_105" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_105"
+                                            data-sid="13" data-qid="105" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;"
+                                data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto"
+                                data-full-width-responsive="true" data-adsbygoogle-status="done"
+                                data-ad-status="unfilled">
+                                <div id="aswift_2_host"
+                                    style="border: none; height: 0px; width: 667px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" browsingtopics="true"
+                                        style="left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 0px;"
+                                        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                        width="667" height="0" frameborder="0" marginwidth="0" marginheight="0"
+                                        vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                                        allow="attribution-reporting"
+                                        src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=2087839902&amp;adf=844190542&amp;pi=t.ma~as.4948233444&amp;w=667&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712398838&amp;rafmt=1&amp;format=667x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fexceptions%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuNjMxMi4xMDYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEyMy4wLjYzMTIuMTA2Il0sWyJOb3Q6QS1CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTIzLjAuNjMxMi4xMDYiXV0sMF0.&amp;dt=1712398681798&amp;bpp=1&amp;bdt=362&amp;idt=190&amp;shv=r20240403&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D746453f5651bc8c1%3AT%3D1711723499%3ART%3D1712398656%3AS%3DALNI_Mb5Zfpyu3PcsuR7_WN5k0oT-umK8w&amp;gpic=UID%3D00000d74b9319e22%3AT%3D1711723499%3ART%3D1712398656%3AS%3DALNI_MZ49unoi_M4TUJwiSrsEoXUqTwxyA&amp;eo_id_str=ID%3Defc5e82f828cb451%3AT%3D1711723499%3ART%3D1712398656%3AS%3DAA-AfjZMpc3An_Ds4AHK2qVPJg_w&amp;prev_fmts=0x0%2C699x280%2C338x280&amp;nras=1&amp;correlator=997501736408&amp;frm=20&amp;pv=1&amp;ga_vid=1020698828.1711723496&amp;ga_sid=1712398682&amp;ga_hid=265233790&amp;ga_fc=1&amp;u_tz=330&amp;u_his=34&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.375&amp;dmc=8&amp;adx=316&amp;ady=4680&amp;biw=1381&amp;bih=632&amp;scr_x=0&amp;scr_y=2161&amp;eid=44759876%2C44759927%2C44759842%2C31082300%2C95326316%2C95329437%2C95329461%2C95329570%2C31082144%2C31082249%2C31078663%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1067868879309565&amp;tmod=1644019206&amp;uas=1&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fquestions-and-answers%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1396%2C632&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=M"
+                                        data-google-container-id="a!3" tabindex="0" title="Advertisement"
+                                        aria-label="Advertisement" data-google-query-id="CKiX59-urYUDFUTbcwEdRecBug"
+                                        data-load-complete="true"></iframe>
+                                </div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- ----------------------------- -->
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0">Pointing out the correct statements</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyProgram</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">FileOutputStream</span> out <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span>
+        out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"test.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">122</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">IOException</span> io<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"IO Error."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                    and given that all methods of class <i class="java-code">FileOutputStream</i>,
+                                    including <i class="java-code">close()</i>, throw an <i
+                                        class="java-code">IOException</i>, which of these is true?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_115">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_115"><span id="lnkOptionLink_A_115"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_115">
+                                        <div class="flex-wrap">This program will compile successfully.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_115"><span id="lnkOptionLink_B_115"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_115">
+                                        <div class="flex-wrap">This program fails to compile due to an error at line 4.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_115"><span id="lnkOptionLink_C_115"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_115">
+                                        <div class="flex-wrap">This program fails to compile due to an error at line 6.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_115"><span id="lnkOptionLink_D_115"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_115">
+                                        <div class="flex-wrap">This program fails to compile due to an error at line 18.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_115" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_115">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Any method (in this case, the <i class="java-code">main()</i> method) that
+                                            throws a checked exception (in this case, <i
+                                                class="java-code">out.close()</i> ) must be called within a try clause,
+                                            or the method must declare that it throws the exception. Either <i
+                                                class="java-code">main()</i> must declare that it throws an exception,
+                                            or the call to <i class="java-code">out.close()</i> in the finally block
+                                            must fall inside a (in this case nested) try-catch block.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_115">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_115">
+                                    <textarea class="bix-report-txt" data-qid="115" name="txtBixReport_115"
+                                        id="txtBixReport_115" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_115" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_115"
+                                            data-sid="13" data-qid="115" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyProgram</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">throwit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello world "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">throwit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Done with try block "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">finally</span> 
+    <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Finally executing "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                    which answer most closely indicates the behavior of the program?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_116">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_116"><span id="lnkOptionLink_A_116"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_116">
+                                        <div class="flex-wrap">The program will not compile.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_116"><span id="lnkOptionLink_B_116"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_116">
+                                        <div class="flex-wrap">The program will print Hello world, then will print that
+                                            a <i class="java-code">RuntimeException</i> has occurred, then will print
+                                            Done with try block, and then will print Finally executing.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_116"><span id="lnkOptionLink_C_116"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_116">
+                                        <div class="flex-wrap">The program will print Hello world, then will print that
+                                            a <i class="java-code">RuntimeException</i> has occurred, and then will
+                                            print Finally executing.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_116"><span id="lnkOptionLink_D_116"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_116">
+                                        <div class="flex-wrap">The program will print Hello world, then will print
+                                            Finally executing, then will print that a <i
+                                                class="java-code">RuntimeException</i> has occurred.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_116" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_116">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Once the program throws a <i class="java-code">RuntimeException</i> (in the
+                                            <i class="java-code">throwit()</i> method) that is not caught, the finally
+                                            block will be executed and the program will be terminated. If a method does
+                                            not handle an exception, the finally block is executed before the exception
+                                            is propagated.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_116">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_116">
+                                    <textarea class="bix-report-txt" data-qid="116" name="txtBixReport_116"
+                                        id="txtBixReport_116" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_116" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_116"
+                                            data-sid="13" data-qid="116" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExceptionTest</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">class</span> <span class="token class-name">TestException</span> <span class="token keyword">extends</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">TestException</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">/* Point X */</span> 
+<span class="token punctuation">{</span> 
+    <span class="token function">runTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                    At Point X on line 5, which code is necessary to make the code compile?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_117">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_117"><span id="lnkOptionLink_A_117"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_117">
+                                        <div class="flex-wrap">No code is necessary.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_117"><span id="lnkOptionLink_B_117"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_117">
+                                        <div class="flex-wrap">throws Exception</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_117"><span id="lnkOptionLink_C_117"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_117">
+                                        <div class="flex-wrap">catch ( Exception e )</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_117"><span id="lnkOptionLink_D_117"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_117">
+                                        <div class="flex-wrap">throws RuntimeException</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_117" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_117">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct. This works because it DOES throw an exception if an
+                                            error occurs.</p>
+                                        <p>Option A is wrong. If you compile the code as given the compiler will
+                                            complain:</p>
+                                        <p>"unreported exception must be caught or declared to be thrown" The class
+                                            extends <i class="java-code">Exception</i> so we are forced to test for
+                                            exceptions.</p>
+                                        <p>Option C is wrong. The catch statement belongs in a method body not a method
+                                            specification.</p>
+                                        <p>Option D is wrong. <i class="java-code">TestException</i> is a subclass of <i
+                                                class="java-code">Exception</i> therefore the test method, in this
+                                            example, must throw <i class="java-code">TestException</i> or some other
+                                            class further up the <i class="java-code">Exception</i> tree. Throwing <i
+                                                class="java-code">RuntimeException</i> is just not on as this belongs in
+                                            the <i class="java-code">java.lang.RuntimeException</i> branch (it is not a
+                                            superclass of <i class="java-code">TestException</i>). The compiler
+                                            complains with the same error as in A above.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_117">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_117">
+                                    <textarea class="bix-report-txt" data-qid="117" name="txtBixReport_117"
+                                        id="txtBixReport_117" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_117" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_117"
+                                            data-sid="13" data-qid="117" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Start "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">FileNotFoundException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" Catch Here "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 7 */</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">EOFException</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"End of file exception"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"File not found"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                    and given that <i class="java-code">EOFException</i> and <i
+                                        class="java-code">FileNotFoundException</i> are both subclasses of <i
+                                        class="java-code">IOException</i>, and further assuming this block of code is
+                                    placed into a class, which statement is most true concerning this code?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_114">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_114"><span id="lnkOptionLink_A_114"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_114">
+                                        <div class="flex-wrap">The code will not compile.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_114"><span id="lnkOptionLink_B_114"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_114">
+                                        <div class="flex-wrap">Code output: Start Hello world File Not Found.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_114"><span id="lnkOptionLink_C_114"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_114">
+                                        <div class="flex-wrap">Code output: Start Hello world End of file exception.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_114"><span id="lnkOptionLink_D_114"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_114">
+                                        <div class="flex-wrap">Code output: Start Hello world Catch Here File not found.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_114" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_114">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Line 7 will cause a compiler error. The only legal statements after <i
+                                                class="java-code">try</i> blocks are either <i
+                                                class="java-code">catch</i> or finally statements.</p>
+                                        <p>Option B, C, and D are incorrect based on the program logic described above.
+                                            If line 7 was removed, the code would compile and the correct answer would
+                                            be Option B.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_114">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_114">
+                                    <textarea class="bix-report-txt" data-qid="114" name="txtBixReport_114"
+                                        id="txtBixReport_114" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_114" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_114"
+                                            data-sid="13" data-qid="114" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which statement is true?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_118">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_118"><span id="lnkOptionLink_A_118"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_118">
+                                        <div class="flex-wrap"><i class="java-code">catch(X x)</i> can catch subclasses
+                                            of <i class="java-code">X</i> where <i class="java-code">X</i> is a subclass
+                                            of <i class="java-code">Exception</i>.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_118"><span id="lnkOptionLink_B_118"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_118">
+                                        <div class="flex-wrap">The <i class="java-code">Error</i> class is a <i
+                                                class="java-code">RuntimeException</i>.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_118"><span id="lnkOptionLink_C_118"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_118">
+                                        <div class="flex-wrap">Any statement that can throw an <i
+                                                class="java-code">Error</i> must be enclosed in a try block.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_118"><span id="lnkOptionLink_D_118"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_118">
+                                        <div class="flex-wrap">Any statement that can throw an <i
+                                                class="java-code">Exception</i> must be enclosed in a try block.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_118" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_118">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option A is correct. If the class specified in the catch clause does have
+                                            subclasses, any exception object that subclasses the specified class will be
+                                            caught as well.</p>
+                                        <p>Option B is wrong. The error class is a subclass of <i
+                                                class="java-code">Throwable</i> and not <i class="java-code">Runtime</i>
+                                            Exception.</p>
+                                        <p>Option C is wrong. You do not catch this class of error.</p>
+                                        <p>Option D is wrong. An exception can be thrown to the next method higher up
+                                            the call stack.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_118">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_118">
+                                    <textarea class="bix-report-txt" data-qid="118" name="txtBixReport_118"
+                                        id="txtBixReport_118" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_118" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_118"
+                                            data-sid="13" data-qid="118" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;"
+                                data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto"
+                                data-full-width-responsive="true" data-adsbygoogle-status="done"
+                                data-ad-status="unfilled">
+                                <div id="aswift_2_host"
+                                    style="border: none; height: 0px; width: 667px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" browsingtopics="true"
+                                        style="left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 0px;"
+                                        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                        width="667" height="0" frameborder="0" marginwidth="0" marginheight="0"
+                                        vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                                        allow="attribution-reporting"
+                                        src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=2087839902&amp;adf=844190542&amp;pi=t.ma~as.4948233444&amp;w=667&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712398909&amp;rafmt=1&amp;format=667x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fexceptions%2F011001&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuNjMxMi4xMDYiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEyMy4wLjYzMTIuMTA2Il0sWyJOb3Q6QS1CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTIzLjAuNjMxMi4xMDYiXV0sMF0.&amp;dt=1712398909560&amp;bpp=2&amp;bdt=309&amp;idt=76&amp;shv=r20240403&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D746453f5651bc8c1%3AT%3D1711723499%3ART%3D1712398656%3AS%3DALNI_Mb5Zfpyu3PcsuR7_WN5k0oT-umK8w&amp;gpic=UID%3D00000d74b9319e22%3AT%3D1711723499%3ART%3D1712398656%3AS%3DALNI_MZ49unoi_M4TUJwiSrsEoXUqTwxyA&amp;eo_id_str=ID%3Defc5e82f828cb451%3AT%3D1711723499%3ART%3D1712398656%3AS%3DAA-AfjZMpc3An_Ds4AHK2qVPJg_w&amp;prev_fmts=0x0%2C699x280&amp;nras=1&amp;correlator=1360722431085&amp;frm=20&amp;pv=1&amp;ga_vid=1020698828.1711723496&amp;ga_sid=1712398910&amp;ga_hid=53439455&amp;ga_fc=1&amp;u_tz=330&amp;u_his=35&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.375&amp;dmc=8&amp;adx=316&amp;ady=3968&amp;biw=1381&amp;bih=632&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C31082301%2C42532523%2C95329025%2C95329440%2C95329570%2C31082249%2C31078663%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1325722899041563&amp;tmod=1644019206&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fjava-programming%2Fexceptions%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1396%2C632&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=318"
+                                        data-google-container-id="a!3" tabindex="0" title="Advertisement"
+                                        aria-label="Advertisement" data-google-query-id="CIDG4IGvrYUDFf1FwgUdxDEBHw"
+                                        data-load-complete="true"></iframe></div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- ------------------- -->
+                </div>
+    </main>
+
+    <script src="https://www.indiabix.com/_files/js/util/bootstrap.bundle.min.js"></script>
+    <script src="https://www.indiabix.com/_files/js/main.min.js?ver=1.0"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+    <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"
+        data-ad-status="unfilled">
+        <div id="aswift_0_host"
+            style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
+            <iframe id="aswift_0" name="aswift_0"
+                style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                scrolling="no"
+                src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0191447310372013&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1712043588&amp;plat=1%3A16777216%2C2%3A16777216%2C3%3A16%2C4%3A16%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2FA11.1%2Fwww.indiabix.com%2Faptitude%2Fquestions-and-answers%2Findex.html&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTIyLjAuMjM2NS45MiIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuMTI5Il0sWyJOb3QoQTpCcmFuZCIsIjI0LjAuMC4wIl0sWyJNaWNyb3NvZnQgRWRnZSIsIjEyMi4wLjIzNjUuOTIiXV0sMF0.&amp;dt=1712125749846&amp;bpp=5&amp;bdt=199&amp;idt=107&amp;shv=r20240328&amp;mjsv=m202403280101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=673421660251&amp;frm=20&amp;pv=2&amp;ga_vid=2074399148.1712042278&amp;ga_sid=1712125750&amp;ga_hid=677183597&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1897&amp;bih=932&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C44798934%2C95325427%2C31082370%2C95320376%2C95328825&amp;oid=2&amp;pvsid=3907513776012983&amp;tmod=789056828&amp;wsm=1&amp;uas=0&amp;nvt=3&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1040%2C1912%2C932&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=149"
+                data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement"
+                data-load-complete="true"></iframe>
+        </div>
+    </ins><iframe name="googlefcInactive" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support-9
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>

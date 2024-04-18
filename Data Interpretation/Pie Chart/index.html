@@ -1,0 +1,1923 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1f1f1">
+    <title>Data Interpretation :: Pie Charts
+    </title>
+    <meta name="description"
+        content="Aptitude questions and answers with explanations are provided for your competitive exams, placement interviews, and entrance tests.">
+    <link rel="shortcut icon" href="https://www.indiabix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/main.min.css?ver=1.04">
+    <script
+        src="https://paghead2.googlesyndication.com/pagead/managed/js/adsense/m202404020101/show_ads_impl_fy2021.js?bust=31082433"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403250101/show_ads_impl_fy2021.js"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403270101/show_ads_impl_fy2021.js?bust=31082332"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E20ELFGHR5"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-E20ELFGHR5');</script>
+    <style>
+        .top_ad_unit,
+        .right_ad_unit,
+        .bottom_ad_unit {
+            min-width: 250px;
+            width: 100%;
+        }
+
+        ins.adsbygoogle {
+            background: transparent !important;
+        }
+    </style>
+    <script async="" src="https://fundingchoicesmessages.google.com/i/pub-0191447310372013?ers=1"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        nonce="pao_y7pIpyQovEpXG_CiRg">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+</head>
+
+<body class="">
+    <iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe>
+    <aside class="sidebar-nav-wrapper">
+        <a class="navbar-brand" href="/index.html"> <img src="/skillhubtrend/assets/images/logo 1.png" alt="logo" id="logo" style="text-align: center;
+           height: 250px; padding: 2px 25px;
+            margin-bottom: -5px;
+        "></a>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item"><a href="https://www.indiabix.com/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5">
+                                </path>
+                            </svg></span><span class="text">Home</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/aptitude/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Arithmetic
+                            Aptitude</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/data-interpretation/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Data
+                            Interpretation</span></a></li>
+                <!--<li class="divider"></li>-->
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-ability/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Ability</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Logical
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-reasoning/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Nonverbal
+                            Reasoning</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/online-test/categories/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Online Tests</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/current-affairs/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Current
+                            Affairs</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/general-knowledge/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">General Knowledge</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/hr-interview/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">HR
+                            Interview</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/group-discussion/topics-with-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Group
+                            Discussion</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/placement-papers/companies/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Placement Papers</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/technical/interview-questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Technical
+                            Interview</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/mechanical-engineering/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Mechanical
+                            Engineering</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/civil-engineering/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Civil
+                            Engineering</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/electronics-and-communication-engineering/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">ECE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/electrical-engineering/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">EEE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/computer-science/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">CSE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/engineering/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Read more…</span></a>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-programming/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C
+                            Programming</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/cpp-programming/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C++</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-sharp-programming/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C#</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/java-programming/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Java</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/database/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Database</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/networking/questions-and-answers/"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Networking</span></a></li>
+                <!-- <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/microbiology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-dna"></i></span><span class="text">Microbiology</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biochemistry/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-checkbox-multiple-blank-circle"></i></span><span
+                            class="text">Biochemistry</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biotechnology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-circle-multiple-outline"></i></span><span
+                            class="text">Biotechnology</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/biochemical-engineering/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-chart-bubble"></i></span><span class="text">Biochemical
+                        </span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/number-puzzles/"><span class="icon"><i
+                                class="mdi mdi-checkerboard"></i></span><span class="text">Puzzles Quiz</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/sudoku/"><span class="icon"><i
+                                class="mdi mdi-grid"></i></span><span class="text">Sudoku</span></a></li> -->
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/contact-us"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z">
+                                </path>
+                            </svg></span><span class="text">Contact
+                            Us</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <main class="main-wrapper" style="height: auto !important; min-height: 0px !important;">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn">
+                                <button aria-label="Menu Toggle" id="menu-toggle" class="main-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="head-name">
+                                <a href="https://www.indiabix.com/"><img src="/skillhubtrend/assets/images/logo 2.png" alt="logo" id="logo" style="text-align: center;
+                                    height: 56px; 
+                                     margin-bottom: -5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right d-flex align-items-center">
+                            <div class="header-search d-none d-sm-block" id="search-form-box">
+                                <form method="get" id="search-form" name="search form" action="https://www.google.co.in/search" target="_blank">
+                                    <input type="hidden" name="sitesearch" value="www.indiabix.com">
+                                    <button aria-label="Search Submit"></button>
+
+                                </form>
+                            </div>
+                            <button aria-label="Search" id="btnSearch" class="header-button d-block d-sm-none">
+
+                            </button>
+                            <button aria-label="Page Share" id="btnShare" class="header-button"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5">
+                                    </path>
+                                </svg></button>
+                            <button aria-label="Theme Toggle" id="btnTheme" class="header-button"></button>
+                            <a href="https://www.indiabix.com/user/login/" id="btnLogin" class="header-button" aria-label="Login to stay connected with IndiaBIX!">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid" style="height: auto !important;">
+
+            <div class="row no-gutters">
+                <div class="title-wrapper">
+                    <div class="title d-flex flex-row">
+                        <div>
+                            <h1 class="flex-wrap w-100 add-color">Data Interpretation :: <span>Pie Charts</span></h1>
+                        </div>
+                    </div>
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="direction-div" id="direction">
+                            <div class="h5 w-100"><i class="mdi mdi-bullhorn"> </i> Directions to Solve</div>
+                            <div class="direction-text">
+                                <p>The following pie-chart shows the percentage distribution of the expenditure incurred
+                                    in publishing a book. Study the pie-chart and the answer the questions based on it.</p>
+                                <p align="center" class="di-heading">Various Expenditures (in percentage) Incurred in
+                                    Publishing a Book</p>
+                                <p align="center"><img src="/skillhubtrend/assets/images/piechart1.png"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">If for a certain quantity of books, the
+                                    publisher has to pay Rs. 30,600 as printing cost, then what will be amount of
+                                    royalty to be paid for these books?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_45">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_45"><span id="lnkOptionLink_A_45" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_45">
+                                        <div class="flex-wrap">Rs. 19,450</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_45"><span id="lnkOptionLink_B_45" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_45">
+                                        <div class="flex-wrap">Rs. 21,200</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_45"><span id="lnkOptionLink_C_45" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_45">
+                                        <div class="flex-wrap">Rs. 22,950</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_45"><span id="lnkOptionLink_D_45" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_45">
+                                        <div class="flex-wrap">Rs. 26,150</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_45" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_45">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Let the amount of Royalty to be paid for these books be Rs. <i class="di-var">r</i>.</p>
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2">Then, 20 : 15 = 30600 : <i class="di-var">r</i> &nbsp; &nbsp; <img src="/_files/images/data-interpretation/common/15-sym-imp.gif" alt="=>"> &nbsp; &nbsp; <i class="di-var">r</i> = Rs.</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">30600 x 15</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">= Rs. 22,950.</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_45">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_45">
+                                    <textarea class="bix-report-txt" data-qid="45" name="txtBixReport_45" id="txtBixReport_45" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_45" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_45" data-sid="15" data-qid="45" data-qno="1" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What is the central angle of the sector
+                                    corresponding to the expenditure incurred on Royalty?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_41">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_41"><span id="lnkOptionLink_A_41" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_41">
+                                        <div class="flex-wrap">15°</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_41"><span id="lnkOptionLink_B_41" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_41">
+                                        <div class="flex-wrap">24°</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_41"><span id="lnkOptionLink_C_41" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_41">
+                                        <div class="flex-wrap">54°</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_41"><span id="lnkOptionLink_D_41" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_41">
+                                        <div class="flex-wrap">48°</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_41" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_41">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="di-td-normal-rpad">Central angle corresponding to Royalty
+                                                    </td>
+                                                    <td class="di-td-normal-rpad">= (15% of 360)°</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="di-td-normal-rpad"></td>
+                                                    <td class="di-td-normal-rpad">
+                                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr align="center">
+                                                                    <td class="di-td-line-rpad" rowspan="2">=</td>
+                                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                                    <td class="di-td-divident">15</td>
+                                                                    <td class="di-td-line-lpad" rowspan="2">x 360</td>
+                                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                                    <td class="di-td-upline" rowspan="2">°</td>
+                                                                </tr>
+                                                                <tr align="center">
+                                                                    <td class="di-td-divisor">100</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="di-td-normal-rpad"></td>
+                                                    <td class="di-td-normal-rpad">= 54°.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_41">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_41">
+                                    <textarea class="bix-report-txt" data-qid="41" name="txtBixReport_41" id="txtBixReport_41" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_41" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_41" data-sid="15" data-qid="41" data-qno="2" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">The price of the book is marked 20%
+                                    above the C.P. If the marked price of the book is Rs. 180, then what is the cost of
+                                    the paper used in a single copy of the book?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_46">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_46"><span id="lnkOptionLink_A_46" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_46">
+                                        <div class="flex-wrap">Rs. 36</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_46"><span id="lnkOptionLink_B_46" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_46">
+                                        <div class="flex-wrap">Rs. 37.50</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_46"><span id="lnkOptionLink_C_46" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_46">
+                                        <div class="flex-wrap">Rs. 42</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_46"><span id="lnkOptionLink_D_46" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_46">
+                                        <div class="flex-wrap">Rs. 44.25</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_46" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_46">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Clearly, marked price of the book = 120% of C.P.</p>
+                                        <p>Also, cost of paper = 25% of C.P</p>
+                                        <p>Let the cost of paper for a single book be Rs. <i class="di-var">n</i>.</p>
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2">Then, 120 : 25 = 180 : <i class="di-var">n</i> &nbsp; &nbsp; <img src="/_files/images/data-interpretation/common/15-sym-imp.gif" alt="=>"> &nbsp; &nbsp; <i class="di-var">n</i> = Rs.</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">25 x 180</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">= Rs. 37.50 .</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">120</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_46">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_46">
+                                    <textarea class="bix-report-txt" data-qid="46" name="txtBixReport_46" id="txtBixReport_46" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_46" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_46" data-sid="15" data-qid="46" data-qno="3" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">If 5500 copies are published and the
+                                    transportation cost on them amounts to Rs. 82500, then what should be the selling
+                                    price of the book so that the publisher can earn a profit of 25%?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_48">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_48"><span id="lnkOptionLink_A_48" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_48">
+                                        <div class="flex-wrap">Rs. 187.50</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_48"><span id="lnkOptionLink_B_48" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_48">
+                                        <div class="flex-wrap">Rs. 191.50</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_48"><span id="lnkOptionLink_C_48" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_48">
+                                        <div class="flex-wrap">Rs. 175</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_48"><span id="lnkOptionLink_D_48" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_48">
+                                        <div class="flex-wrap">Rs. 180</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_48" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_48">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>For the publisher to earn a profit of 25%, S.P. = 125% of C.P.</p>
+                                        <p>Also Transportation Cost = 10% of C.P.</p>
+                                        <p>Let the S.P. of 5500 books be Rs. <i class="di-var">x</i>.</p>
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2">Then, 10 : 125 = 82500 : <i class="di-var">x</i> &nbsp; &nbsp; <img src="/_files/images/data-interpretation/common/15-sym-imp.gif" alt="=>"> &nbsp; &nbsp; <i class="di-var">x</i> = Rs.</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">125 x 82500</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">= Rs. 1031250.</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">10</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-tfr.gif" alt="Therefore"> S.P. of one book = Rs.</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">1031250</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">= Rs. 187.50 .</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">5500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_48">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_48">
+                                    <textarea class="bix-report-txt" data-qid="48" name="txtBixReport_48" id="txtBixReport_48" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_48" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_48" data-sid="15" data-qid="48" data-qno="4" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Royalty on the book is less than the
+                                    printing cost by:</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_49">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_49"><span id="lnkOptionLink_A_49" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_49">
+                                        <div class="flex-wrap">5%</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_49"><span id="lnkOptionLink_B_49" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_49">
+                                        <div class="flex-wrap">
+                                            <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr align="center">
+                                                        <td class="di-td-line-rpad" rowspan="2">33</td>
+                                                        <td class="di-td-divident">1</td>
+                                                        <td class="di-td-line" rowspan="2">%</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td class="di-td-divisor">5</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_49"><span id="lnkOptionLink_C_49" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_49">
+                                        <div class="flex-wrap">20%</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_49"><span id="lnkOptionLink_D_49" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center correct-ans" id="tdOptionDt_D_49">
+                                        <div class="flex-wrap">25%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_49" value="D">
+
+                                <div class="bix-div-answer collapse show" id="divAnswer_49">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Printing Cost of book = 20% of C.P.</p>
+                                        <p>Royalty on book = 15% of C.P.</p>
+                                        <p>Difference = (20% of C.P.) - (15% of C.P) = 5% of C.P.</p>
+                                        <p></p>
+                                        <table class="di-tbl-answer" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-tfr.gif" alt="Therefore"> Percentage difference</td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">=</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">Difference</td>
+                                                    <td class="di-td-line-lpad" rowspan="2">x 100</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line" rowspan="2" align="left">%</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">Printing Cost</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="10" class="di-td-dummy">
+                                                        <p>&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-line-rpad" rowspan="2">&nbsp;</td>
+                                                    <td class="di-td-line-lrpad" rowspan="2">=</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-oparen-h1.gif" alt="("></td>
+                                                    <td class="di-td-divident">5% of C.P.</td>
+                                                    <td class="di-td-line-lpad" rowspan="2">x 100</td>
+                                                    <td class="di-td-line" rowspan="2"><img src="/_files/images/data-interpretation/common/15-sym-cparen-h1.gif" alt=")"></td>
+                                                    <td class="di-td-line" rowspan="2" align="left">% = 25%.</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td class="di-td-divisor">Printing Cost</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_49">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_49">
+                                    <textarea class="bix-report-txt" data-qid="49" name="txtBixReport_49" id="txtBixReport_49" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_49" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_49" data-sid="15" data-qid="49" data-qno="5" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <nav aria-label="Page navigation">
+                            
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-style" style="height: auto !important;">
+                    <div class="direction-div" id="direction">
+                        <div class="h5 w-100"><i class="mdi mdi-bullhorn"> </i> Directions to Solve</div>
+                        <div class="direction-text">
+                            <p>The following pie charts exhibit the distribution of the overseas tourist traffic from
+                                India. The two charts shows the tourist distribution by country and the age profiles of
+                                the tourists respectively.</p>
+                            <p align="center" class="di-heading">Distribution of Overseas Tourist Traffic from India.</p>
+                            <p align="center"><img src="/skillhubtrend/assets/images/piechart2.png"></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bix-div-container">
+                        <div class="d-flex flex-row align-items-top justify-content-start">
+                            <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                            <div class="bix-td-qtxt table-responsive w-100">What percentage of Indian tourist went to
+                                either USA or UK ?</div>
+                        </div>
+                        <div class="bix-tbl-options" id="tblOption_50">
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_A_50"><span id="lnkOptionLink_A_50" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_50">
+                                    <div class="flex-wrap">40 %</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_B_50"><span id="lnkOptionLink_B_50" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_50">
+                                    <div class="flex-wrap">50 %</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_C_50"><span id="lnkOptionLink_C_50" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_50">
+                                    <div class="flex-wrap">60 %</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_D_50"><span id="lnkOptionLink_D_50" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_50">
+                                    <div class="flex-wrap">70 %</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bix-td-miscell">
+
+                            <input type="hidden" class="jq-hdnakq" id="hdnAnswer_50" value="B">
+
+                            <div class="bix-div-answer collapse " id="divAnswer_50">
+                                <div class="bix-ans-option d-flex flex-row align-items-center">
+                                    <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                    <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span></div>
+                                </div>
+                                <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                <div class="bix-ans-description table-responsive">
+                                    (40+10) = 50% (from first chart)
+                                </div>
+
+                            </div>
+
+                            <div class="bix-div-workspace collapse" id="divWorkspace_50">
+                                <textarea rows="10" placeholder="Workspace"></textarea>
+                            </div>
+
+                            <div class="bix-div-report collapse text-end" id="divReport_50">
+                                <textarea class="bix-report-txt" data-qid="50" name="txtBixReport_50" id="txtBixReport_50" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                    <div id="ques_resp_50" class="ms-auto resp-div d-flex align-items-center"> </div>
+                                    <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_50" data-sid="15" data-qid="50" data-qno="1" type="button" value="Send Report" disabled="">
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bix-div-container">
+                        <div class="d-flex flex-row align-items-top justify-content-start">
+                            <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                            <div class="bix-td-qtxt table-responsive w-100">The ratio of the number of Indian tourists
+                                that went to USA to the number of Indian tourists who were below 30 years of age is ?
+                            </div>
+                        </div>
+                        <div class="bix-tbl-options" id="tblOption_51">
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_A_51"><span id="lnkOptionLink_A_51" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_51">
+                                    <div class="flex-wrap">2:1</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_B_51"><span id="lnkOptionLink_B_51" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_51">
+                                    <div class="flex-wrap">8:3</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_C_51"><span id="lnkOptionLink_C_51" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_51">
+                                    <div class="flex-wrap">3:8</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_D_51"><span id="lnkOptionLink_D_51" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_51">
+                                    <div class="flex-wrap">Cannot be determined</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bix-td-miscell">
+
+                            <input type="hidden" class="jq-hdnakq" id="hdnAnswer_51" value="B">
+
+                            <div class="bix-div-answer collapse " id="divAnswer_51">
+                                <div class="bix-ans-option d-flex flex-row align-items-center">
+                                    <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                    <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span></div>
+                                </div>
+                                <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                <div class="bix-ans-description table-responsive">
+                                    40:15 = 8:3
+                                </div>
+
+                            </div>
+
+                            <div class="bix-div-workspace collapse" id="divWorkspace_51">
+                                <textarea rows="10" placeholder="Workspace"></textarea>
+                            </div>
+
+                            <div class="bix-div-report collapse text-end" id="divReport_51">
+                                <textarea class="bix-report-txt" data-qid="51" name="txtBixReport_51" id="txtBixReport_51" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                    <div id="ques_resp_51" class="ms-auto resp-div d-flex align-items-center"> </div>
+                                    <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_51" data-sid="15" data-qid="51" data-qno="2" type="button" value="Send Report" disabled="">
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bix-div-container">
+                        <div class="d-flex flex-row align-items-top justify-content-start">
+                            <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                            <div class="bix-td-qtxt table-responsive w-100">If amongst other countries, Switzerland
+                                accounted for 25% of the Indian tourist traffic, and it is known from official Swiss
+                                records that a total of 25 lakh Indian tourists had gone to Switzerland during the year,
+                                then find the number of 30-39 year old Indian tourists who went abroad in that year ?
+                            </div>
+                        </div>
+                        <div class="bix-tbl-options" id="tblOption_52">
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_A_52"><span id="lnkOptionLink_A_52" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_52">
+                                    <div class="flex-wrap">18.75 lakh</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_B_52"><span id="lnkOptionLink_B_52" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_52">
+                                    <div class="flex-wrap">25 lakh</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_C_52"><span id="lnkOptionLink_C_52" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_52">
+                                    <div class="flex-wrap">50 lakh</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-top bix-opt-row">
+                                <div class="bix-td-option" id="tdOptionNo_D_52"><span id="lnkOptionLink_D_52" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_52">
+                                    <div class="flex-wrap">75 lakh</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bix-td-miscell">
+
+                            <input type="hidden" class="jq-hdnakq" id="hdnAnswer_52" value="D">
+
+                            <div class="bix-div-answer collapse " id="divAnswer_52">
+                                <div class="bix-ans-option d-flex flex-row align-items-center">
+                                    <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                    <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span></div>
+                                </div>
+                                <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                <div class="bix-ans-description table-responsive">
+                                    Tourist traffic from other countries to Swiz is 20%.<br><br>
+
+                                    Amongst this 20%, 25% of traffic from India.<br><br>
+
+                                    So, 25% of 20% = 5% corresponds to the Indian traffic in Switzerland.<br><br>
+
+                                    5 % corresponds to Switzerland's 25 lakh. Hence 15% will be 75 lakh.
+                                </div>
+
+                            </div>
+
+                            <div class="bix-div-workspace collapse" id="divWorkspace_52">
+                                <textarea rows="10" placeholder="Workspace"></textarea>
+                            </div>
+
+                            <div class="bix-div-report collapse text-end" id="divReport_52">
+                                <textarea class="bix-report-txt" data-qid="52" name="txtBixReport_52" id="txtBixReport_52" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                    <div id="ques_resp_52" class="ms-auto resp-div d-flex align-items-center"> </div>
+                                    <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_52" data-sid="15" data-qid="52" data-qno="3" type="button" value="Send Report" disabled="">
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="direction-div" id="direction">
+                            <div class="h5 w-100"><i class="mdi mdi-bullhorn"> </i> Directions to Solve</div>
+                            <div class="direction-text">
+                                <p>The following pie chart give the information about the distribution of weight in the
+                                    human body according to different kinds of components. Study the pie charts and
+                                    answer the question.</p>
+                                <p align="center" class="di-heading">Distribution of Weight in Human Body</p>
+                                <p align="center"><img src="/skillhubtrend/assets/images/piechart3.png"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What percentage of proteins of the human
+                                    body is equivalent to the weight of its skin ?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_55">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_55"><span id="lnkOptionLink_A_55" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_55">
+                                        <div class="flex-wrap">41.66 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_55"><span id="lnkOptionLink_B_55" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_55">
+                                        <div class="flex-wrap">43.33 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_55"><span id="lnkOptionLink_C_55" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_55">
+                                        <div class="flex-wrap">44.44 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_55"><span id="lnkOptionLink_D_55" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_55">
+                                        <div class="flex-wrap">Cannot be determined</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_55" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_55">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        Total percentage = (10 / 24) x 100 = 41.6666667 %
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_55">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_55">
+                                    <textarea class="bix-report-txt" data-qid="55" name="txtBixReport_55" id="txtBixReport_55" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_55" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_55" data-sid="15" data-qid="55" data-qno="1" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">How much of the human body is neither
+                                    made of bones or skin ?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_53">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_53"><span id="lnkOptionLink_A_53" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_53">
+                                        <div class="flex-wrap">40 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_53"><span id="lnkOptionLink_B_53" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_53">
+                                        <div class="flex-wrap">50 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_53"><span id="lnkOptionLink_C_53" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_53">
+                                        <div class="flex-wrap">60 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_53"><span id="lnkOptionLink_D_53" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_53">
+                                        <div class="flex-wrap">70 %</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_53" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_53">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        20 + 10 = 30% is made up of either bones or skin. Hence, 70% is made up of
+                                        neither.
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_53">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_53">
+                                    <textarea class="bix-report-txt" data-qid="53" name="txtBixReport_53" id="txtBixReport_53" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_53" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_53" data-sid="15" data-qid="53" data-qno="2" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What is the ratio of the distribution of
+                                    proteins in the muscles to that of the distribution of proteins in the bones ?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_54">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_54"><span id="lnkOptionLink_A_54" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_54">
+                                        <div class="flex-wrap">2:1</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_54"><span id="lnkOptionLink_B_54" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_54">
+                                        <div class="flex-wrap">2:3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_54"><span id="lnkOptionLink_C_54" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_54">
+                                        <div class="flex-wrap">3:2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_54"><span id="lnkOptionLink_D_54" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_54">
+                                        <div class="flex-wrap">Cannot be determined</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_54" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_54">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        It cannot be determined since the respective distributions are not known.
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_54">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_54">
+                                    <textarea class="bix-report-txt" data-qid="54" name="txtBixReport_54" id="txtBixReport_54" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_54" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_54" data-sid="15" data-qid="54" data-qno="3" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013" crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;" data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled">
+                                <div id="aswift_2_host" style="border: none; height: 0px; width: 729px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 729px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="729" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=850184966&amp;adf=1015679774&amp;pi=t.ma~as.4948233444&amp;w=729&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712244120&amp;rafmt=1&amp;format=729x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fdata-interpretation%2Fpie-charts%2F012001&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuMjQyMC42NSIsbnVsbCwwLG51bGwsIjY0IixbWyJNaWNyb3NvZnQgRWRnZSIsIjEyMy4wLjI0MjAuNjUiXSxbIk5vdDpBLUJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjMuMC42MzEyLjg3Il1dLDBd&amp;dt=1712244119989&amp;bpp=1&amp;bdt=300&amp;idt=135&amp;shv=r20240402&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D3bb59ffd1b6fc940%3AT%3D1712243327%3ART%3D1712243847%3AS%3DALNI_MYsvn-sDcrlyb3-fO68fRDFzioOsQ&amp;gpic=UID%3D00000d869be26c4e%3AT%3D1712243327%3ART%3D1712243847%3AS%3DALNI_MavB_1LXQNDVMGhxbZYfCwQ7bzyow&amp;eo_id_str=ID%3D54c271ca1d1267fc%3AT%3D1712243327%3ART%3D1712243847%3AS%3DAA-AfjanyiIrGKo_v6Qsl0hCQvXa&amp;prev_fmts=0x0%2C761x280&amp;nras=1&amp;correlator=1018368425565&amp;frm=20&amp;pv=1&amp;ga_vid=1543305061.1712243311&amp;ga_sid=1712244120&amp;ga_hid=1474857476&amp;ga_fc=1&amp;u_tz=330&amp;u_his=6&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=316&amp;ady=2384&amp;biw=1473&amp;bih=742&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C31082301%2C44795921%2C95329439%2C95329461%2C95329570%2C31082468&amp;oid=2&amp;pvsid=3336380806805488&amp;tmod=638214740&amp;wsm=1&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fdata-interpretation%2Fpie-charts%2F010002&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1488%2C742&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.03&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=460" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CNfnvLDuqIUDFShMwgUdKn8BnA" data-load-complete="true"></iframe>
+                                </div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+
+                    </div>
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="direction-div" id="direction">
+                            <div class="h5 w-100"><i class="mdi mdi-bullhorn"> </i> Directions to Solve</div>
+                            <div class="direction-text">
+                                <p>The pie chart shows the distribution of New York market share by <b>value</b> of
+                                    different computer companies in 2005.</p>
+                                <p align="center"><img src="/skillhubtrend/assets/images/piechart4.1.png"></p>
+                                <p>The pie chart shows the distribution of New York market share by <b>volume</b> of
+                                    different computer companies in 2005.</p>
+                                <p>Number of units sold in 2005 in New York = 1,500</p>
+                                <p>Value of units sold in 2005 in New York = US $1,650,000.</p>
+                                <p align="center"><img src="/skillhubtrend/assets/images/piechart4.2.png"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">For the year 2005, which company has
+                                    realised the lowest average unit sales price for a PC ?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_57">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_57"><span id="lnkOptionLink_A_57" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_57">
+                                        <div class="flex-wrap">Commodore</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_57"><span id="lnkOptionLink_B_57" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_57">
+                                        <div class="flex-wrap">IBM</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_57"><span id="lnkOptionLink_C_57" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_57">
+                                        <div class="flex-wrap">Tandy</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_57"><span id="lnkOptionLink_D_57" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_57">
+                                        <div class="flex-wrap">Cannot be determined</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_57" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_57">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        Although it seems to be Commodore, the answer cannot be determined due to the
+                                        fact that we are unaware of the break-up of the sales value and volume of
+                                        companies compromising the other categories.
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_57">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_57">
+                                    <textarea class="bix-report-txt" data-qid="57" name="txtBixReport_57" id="txtBixReport_57" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_57" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_57" data-sid="15" data-qid="57" data-qno="1" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Over the period 2005-2006, if sales
+                                    (value-wise) of IBM PC's increased by 50% and of Apple by 15% assuming that PC sales
+                                    of all other computer companies remained the same, by what percentage
+                                    (approximately) would the PC sales in New York (value-wise) increase over the same
+                                    period ?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_58">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_58"><span id="lnkOptionLink_A_58" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_58">
+                                        <div class="flex-wrap">16.1 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_58"><span id="lnkOptionLink_B_58" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_58">
+                                        <div class="flex-wrap">18 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_58"><span id="lnkOptionLink_C_58" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_58">
+                                        <div class="flex-wrap">14 %</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_58"><span id="lnkOptionLink_D_58" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_58">
+                                        <div class="flex-wrap">None of these</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_58" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_58">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>If we assume the total sales to be 100 in the first year, IBM's sales would
+                                            go up by 50% (from 28 to 42) contributing an increase of 14 to the total
+                                            sales value.</p>
+                                        <p>Similarly, Apple's increase of 15% would contribute an increase of 2.1 to the
+                                            total sales value. The net change would be 14 + 2.1 on 100. (i.e., 16.1%)</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_58">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_58">
+                                    <textarea class="bix-report-txt" data-qid="58" name="txtBixReport_58" id="txtBixReport_58" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_58" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_58" data-sid="15" data-qid="58" data-qno="2" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">In 2005, the average unit sale price of
+                                    an IBM PC was approximately (in US$)</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_56">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_56"><span id="lnkOptionLink_A_56" class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_A_56">
+                                        <div class="flex-wrap">3180</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_56"><span id="lnkOptionLink_B_56" class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_B_56">
+                                        <div class="flex-wrap">2800</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_56"><span id="lnkOptionLink_C_56" class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_C_56">
+                                        <div class="flex-wrap">393</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_56"><span id="lnkOptionLink_D_56" class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center" id="tdOptionDt_D_56">
+                                        <div class="flex-wrap">3080</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_56" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_56">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>IBM accounts for 28% of the share by value and 10% of the share by volume.</p>
+
+                                        <p>28% of 1650000 = 28 x 1650000/100 = 462000</p>
+
+                                        <p>10% of 1500 = 10 x 1500/100 = 150</p>
+
+                                        <p>Therefore, average unit sale price = 462000/150 = 3080.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_56">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_56">
+                                    <textarea class="bix-report-txt" data-qid="56" name="txtBixReport_56" id="txtBixReport_56" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_56" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_56" data-sid="15" data-qid="56" data-qno="3" type="button" value="Send Report" disabled="">
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013" crossorigin="anonymous" data-checked-head="true"></script>
+                            <ins class="adsbygoogle bottom_ad_unit" style="display: block; height: 0px;" data-ad-client="ca-pub-0191447310372013" data-ad-slot="4948233444" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled">
+                                <div id="aswift_2_host" style="border: none; height: 0px; width: 729px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;">
+                                    <iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 729px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="729" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-0191447310372013&amp;output=html&amp;h=280&amp;slotname=4948233444&amp;adk=850184966&amp;adf=1015679774&amp;pi=t.ma~as.4948233444&amp;w=729&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1712244332&amp;rafmt=1&amp;format=729x280&amp;url=https%3A%2F%2Fwww.indiabix.com%2Fdata-interpretation%2Fpie-charts%2F013001&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIzLjAuMjQyMC42NSIsbnVsbCwwLG51bGwsIjY0IixbWyJNaWNyb3NvZnQgRWRnZSIsIjEyMy4wLjI0MjAuNjUiXSxbIk5vdDpBLUJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjMuMC42MzEyLjg3Il1dLDBd&amp;dt=1712244331453&amp;bpp=1&amp;bdt=248&amp;idt=139&amp;shv=r20240402&amp;mjsv=m202404020101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D3bb59ffd1b6fc940%3AT%3D1712243327%3ART%3D1712243847%3AS%3DALNI_MYsvn-sDcrlyb3-fO68fRDFzioOsQ&amp;gpic=UID%3D00000d869be26c4e%3AT%3D1712243327%3ART%3D1712243847%3AS%3DALNI_MavB_1LXQNDVMGhxbZYfCwQ7bzyow&amp;eo_id_str=ID%3D54c271ca1d1267fc%3AT%3D1712243327%3ART%3D1712243847%3AS%3DAA-AfjanyiIrGKo_v6Qsl0hCQvXa&amp;prev_fmts=0x0%2C761x280&amp;nras=1&amp;correlator=884986338652&amp;frm=20&amp;pv=1&amp;ga_vid=1543305061.1712243311&amp;ga_sid=1712244332&amp;ga_hid=1636498020&amp;ga_fc=1&amp;u_tz=330&amp;u_his=6&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=316&amp;ady=2527&amp;biw=1473&amp;bih=742&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C44795921%2C95326317%2C95329439%2C95329462%2C95329571%2C31082468&amp;oid=2&amp;pvsid=1130472402534926&amp;tmod=638214740&amp;wsm=1&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.indiabix.com%2Fdata-interpretation%2Fpie-charts%2F010002&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1488%2C742&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.03&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=605" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CI-bt5XvqIUDFUMQgwMdOwcEtA" data-load-complete="true"></iframe></div>
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+
+                    </div>
+                </div>
+    </div></div></main>
+
+    <script src="https://www.indiabix.com/_files/js/util/bootstrap.bundle.min.js"></script>
+    <script src="https://www.indiabix.com/_files/js/main.min.js?ver=1.0"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+    <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled">
+        <div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
+            <iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0191447310372013&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1712043588&amp;plat=1%3A16777216%2C2%3A16777216%2C3%3A16%2C4%3A16%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2FA11.1%2Fwww.indiabix.com%2Faptitude%2Fquestions-and-answers%2Findex.html&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTIyLjAuMjM2NS45MiIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuMTI5Il0sWyJOb3QoQTpCcmFuZCIsIjI0LjAuMC4wIl0sWyJNaWNyb3NvZnQgRWRnZSIsIjEyMi4wLjIzNjUuOTIiXV0sMF0.&amp;dt=1712125749846&amp;bpp=5&amp;bdt=199&amp;idt=107&amp;shv=r20240328&amp;mjsv=m202403280101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=673421660251&amp;frm=20&amp;pv=2&amp;ga_vid=2074399148.1712042278&amp;ga_sid=1712125750&amp;ga_hid=677183597&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1897&amp;bih=932&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C44798934%2C95325427%2C31082370%2C95320376%2C95328825&amp;oid=2&amp;pvsid=3907513776012983&amp;tmod=789056828&amp;wsm=1&amp;uas=0&amp;nvt=3&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1040%2C1912%2C932&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=149" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe>
+        </div>
+    </ins><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support-9
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root" style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root" style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+
+
+</body>
+
+</html>

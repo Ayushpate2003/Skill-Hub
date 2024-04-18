@@ -1,0 +1,2377 @@
+<h3 class="flex-wrap w-100 add-color">Find Out The Output</h3>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1f1f1">
+    <title>Java Programming :: Threads
+    </title>
+    <meta name="description"
+        content="Aptitude questions and answers with explanations are provided for your competitive exams, placement interviews, and entrance tests.">
+    <link rel="shortcut icon" href="https://www.indiabix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://www.indiabix.com/_files/css/main.min.css?ver=1.04">
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404020101/show_ads_impl_fy2021.js?bust=31082433"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403250101/show_ads_impl_fy2021.js"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403270101/show_ads_impl_fy2021.js?bust=31082332"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202404010101/show_ads_impl_fy2021.js?bust=31082371"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202403280101/show_ads_impl_fy2021.js?bust=31082370"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E20ELFGHR5"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-E20ELFGHR5');</script>
+    <style>
+        .top_ad_unit,
+        .right_ad_unit,
+        .bottom_ad_unit {
+            min-width: 250px;
+            width: 100%;
+        }
+
+        ins.adsbygoogle {
+            background: transparent !important;
+        }
+    </style>
+    <script async="" src="https://fundingchoicesmessages.google.com/i/pub-0191447310372013?ers=1"
+        nonce="pao_y7pIpyQovEpXG_CiRg"></script>
+    <script
+        nonce="pao_y7pIpyQovEpXG_CiRg">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+        content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+        content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+</head>
+
+<body class="">
+    <iframe name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe><iframe
+        name="googlefcPresent"
+        style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;"></iframe>
+    <aside class="sidebar-nav-wrapper">
+        <a class="navbar-brand" href="/index.html"> <img src="/skillhubtrend/assets/images/logo 1.png" alt="logo"
+                id="logo" style="text-align: center;
+           height: 250px; padding: 2px 25px;
+            margin-bottom: -5px;
+        "></a>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item"><a href="https://www.indiabix.com/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5">
+                                </path>
+                            </svg></span><span class="text">Home</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/aptitude/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Arithmetic
+                            Aptitude</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/data-interpretation/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Data
+                            Interpretation</span></a></li>
+                <!--<li class="divider"></li>-->
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-ability/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Ability</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Logical
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Verbal
+                            Reasoning</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Nonverbal
+                            Reasoning</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/online-test/categories/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Online Tests</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/current-affairs/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Current
+                            Affairs</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/general-knowledge/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">General Knowledge</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/hr-interview/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">HR
+                            Interview</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/group-discussion/topics-with-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Group
+                            Discussion</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/placement-papers/companies/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Placement Papers</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/technical/interview-questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Technical
+                            Interview</span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/mechanical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Mechanical
+                            Engineering</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/civil-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Civil
+                            Engineering</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electronics-and-communication-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">ECE</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/electrical-engineering/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">EEE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/computer-science/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">CSE</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/engineering/"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Read more…</span></a>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C
+                            Programming</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/cpp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C++</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/c-sharp-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">C#</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/java-programming/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Java</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/database/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Database</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/networking/questions-and-answers/"><span
+                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"></circle>
+                            </svg></span><span class="text">Networking</span></a></li>
+                <!-- <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/microbiology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-dna"></i></span><span class="text">Microbiology</span></a>
+                </li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biochemistry/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-checkbox-multiple-blank-circle"></i></span><span
+                            class="text">Biochemistry</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/biotechnology/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-circle-multiple-outline"></i></span><span
+                            class="text">Biotechnology</span></a></li>
+                <li class="nav-item"><a
+                        href="https://www.indiabix.com/biochemical-engineering/questions-and-answers/"><span
+                            class="icon"><i class="mdi mdi-chart-bubble"></i></span><span class="text">Biochemical
+                        </span></a></li>
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/number-puzzles/"><span class="icon"><i
+                                class="mdi mdi-checkerboard"></i></span><span class="text">Puzzles Quiz</span></a></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/puzzles/sudoku/"><span class="icon"><i
+                                class="mdi mdi-grid"></i></span><span class="text">Sudoku</span></a></li> -->
+                <li class="divider"></li>
+                <li class="nav-item"><a href="https://www.indiabix.com/contact-us"><span class="icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z">
+                                </path>
+                            </svg></span><span class="text">Contact
+                            Us</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <main class="main-wrapper" style="height: auto !important; min-height: 0px !important;">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn">
+                                <button aria-label="Menu Toggle" id="menu-toggle" class="main-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="head-name">
+                                <a href="https://www.indiabix.com/"><img src="/skillhubtrend/assets/images/logo 2.png"
+                                        alt="logo" id="logo" style="text-align: center;
+                                    height: 56px; 
+                                     margin-bottom: -5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right d-flex align-items-center">
+                            <div class="header-search d-none d-sm-block" id="search-form-box">
+                                <form method="get" id="search-form" name="search form"
+                                    action="https://www.google.co.in/search" target="_blank">
+                                    <input type="hidden" name="sitesearch" value="www.indiabix.com">
+                                    <button aria-label="Search Submit"></button>
+
+                                </form>
+                            </div>
+                            <button aria-label="Search" id="btnSearch" class="header-button d-block d-sm-none">
+
+                            </button>
+                            <button aria-label="Page Share" id="btnShare" class="header-button"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5">
+                                    </path>
+                                </svg></button>
+                            <button aria-label="Theme Toggle" id="btnTheme" class="header-button"></button>
+                            <a href="https://www.indiabix.com/user/login/" id="btnLogin" class="header-button"
+                                aria-label="Login to stay connected with IndiaBIX!">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid" style="height: auto !important;">
+
+            <div class="row no-gutters">
+                <div class="title-wrapper">
+                    <div class="title d-flex flex-row">
+                        <!-- <span class="mdi mdi-language-java ib-text-title"></span> -->
+                        <div>
+                            <h1 class="flex-wrap w-100 add-color">Java Programming :: <span>Threads</span></h1>
+                        </div>
+                    </div>
+                    <div class="card-style" style="height: auto !important;">
+
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What is the name of the method used to
+                                    start a thread execution?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_162">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_162"><span id="lnkOptionLink_A_162"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_162">
+                                        <div class="flex-wrap">init();</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_162"><span id="lnkOptionLink_B_162"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_162">
+                                        <div class="flex-wrap">start();</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_162"><span id="lnkOptionLink_C_162"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_162">
+                                        <div class="flex-wrap">run();</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_162"><span id="lnkOptionLink_D_162"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_162">
+                                        <div class="flex-wrap">resume();</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_162" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_162">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is Correct. The <i class="java-code">start()</i> method causes this
+                                            thread to begin execution; the Java Virtual Machine calls the run method of
+                                            this thread.</p>
+                                        <p>Option A is wrong. There is no <i class="java-code">init()</i> method in the
+                                            <i class="java-code">Thread</i> class.
+                                        </p>
+                                        <p>Option C is wrong. The <i class="java-code">run()</i> method of a thread is
+                                            like the main() method to an application. Starting the thread causes the
+                                            object's run method to be called in that separately executing thread.</p>
+                                        <p>Option D is wrong. The <i class="java-code">resume()</i> method is
+                                            deprecated. It resumes a suspended thread.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_162">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_162">
+                                    <textarea class="bix-report-txt" data-qid="162" name="txtBixReport_162"
+                                        id="txtBixReport_162" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_162" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_162"
+                                            data-sid="13" data-qid="162" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which two are valid constructors for
+                                    Thread?
+                                    <ol class="java-ol-1234">
+                                        <li>Thread(Runnable r, String name)</li>
+                                        <li>Thread()</li>
+                                        <li>Thread(int priority)</li>
+                                        <li>Thread(Runnable r, ThreadGroup g)</li>
+                                        <li>Thread(Runnable r, int priority)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_171">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_171"><span id="lnkOptionLink_A_171"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_171">
+                                        <div class="flex-wrap">1 and 3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_171"><span id="lnkOptionLink_B_171"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_171">
+                                        <div class="flex-wrap">2 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_171"><span id="lnkOptionLink_C_171"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_171">
+                                        <div class="flex-wrap">1 and 2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_171"><span id="lnkOptionLink_D_171"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_171">
+                                        <div class="flex-wrap">2 and 5</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_171" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_171">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>(1) and (2) are both valid constructors for <i class="java-code">Thread</i>.
+                                        </p>
+                                        <p>(3), (4), and (5) are not legal <i class="java-code">Thread</i> constructors,
+                                            although (4) is close. If you reverse the arguments in (4), you'd have a
+                                            valid constructor.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_171">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_171">
+                                    <textarea class="bix-report-txt" data-qid="171" name="txtBixReport_171"
+                                        id="txtBixReport_171" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_171" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_171"
+                                            data-sid="13" data-qid="171" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which three are methods of the Object
+                                    class?
+                                    <ol class="java-ol-1234">
+                                        <li>notify();</li>
+                                        <li>notifyAll();</li>
+                                        <li>isInterrupted();</li>
+                                        <li>synchronized();</li>
+                                        <li>interrupt();</li>
+                                        <li>wait(long msecs);</li>
+                                        <li>sleep(long msecs);</li>
+                                        <li>yield();</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_173">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_173"><span id="lnkOptionLink_A_173"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_173">
+                                        <div class="flex-wrap">1, 2, 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_173"><span id="lnkOptionLink_B_173"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_173">
+                                        <div class="flex-wrap">2, 4, 5</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_173"><span id="lnkOptionLink_C_173"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_173">
+                                        <div class="flex-wrap">1, 2, 6</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_173"><span id="lnkOptionLink_D_173"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_173">
+                                        <div class="flex-wrap">2, 3, 4</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_173" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_173">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>(1), (2), and (6) are correct. They are all related to the list of threads
+                                            waiting on the specified object.</p>
+                                        <p>(3), (5), (7), and (8) are incorrect answers. The methods <i
+                                                class="java-code">isInterrupted()</i> and <i
+                                                class="java-code">interrupt()</i> are instance methods of <i
+                                                class="java-code">Thread</i>.</p>
+                                        <p>The methods <i class="java-code">sleep()</i> and <i
+                                                class="java-code">yield()</i> are static methods of <i
+                                                class="java-code">Thread</i>.</p>
+                                        <p>D is incorrect because <i class="java-code">synchronized</i> is a keyword and
+                                            the <i class="java-code">synchronized()</i> construct is part of the Java
+                                            language.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_173">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_173">
+                                    <textarea class="bix-report-txt" data-qid="173" name="txtBixReport_173"
+                                        id="txtBixReport_173" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_173" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_173"
+                                            data-sid="13" data-qid="173" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">X</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token comment">/* Missing code? */</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                    Which of the following line of code is suitable to start a thread ?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_177">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_177"><span id="lnkOptionLink_A_177"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_177">
+                                        <div class="flex-wrap">Thread t = new Thread(X);</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_177"><span id="lnkOptionLink_B_177"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_177">
+                                        <div class="flex-wrap">Thread t = new Thread(X); t.start();</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_177"><span id="lnkOptionLink_C_177"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_177">
+                                        <div class="flex-wrap">X run = new X(); Thread t = new Thread(run); t.start();
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_177"><span id="lnkOptionLink_D_177"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_177">
+                                        <div class="flex-wrap">Thread t = new Thread(); x.run();</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_177" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_177">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option C is suitable to start a thread.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_177">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_177">
+                                    <textarea class="bix-report-txt" data-qid="177" name="txtBixReport_177"
+                                        id="txtBixReport_177" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_177" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_177"
+                                            data-sid="13" data-qid="177" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which cannot directly cause a thread to
+                                    stop executing?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_168">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_168"><span id="lnkOptionLink_A_168"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_168">
+                                        <div class="flex-wrap">Calling the <i class="java-code">SetPriority()</i> method
+                                            on a <i class="java-code">Thread</i> object.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_168"><span id="lnkOptionLink_B_168"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_168">
+                                        <div class="flex-wrap">Calling the <i class="java-code">wait()</i> method on an
+                                            object.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_168"><span id="lnkOptionLink_C_168"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_168">
+                                        <div class="flex-wrap">Calling <i class="java-code">notify()</i> method on an
+                                            object.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_168"><span id="lnkOptionLink_D_168"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_168">
+                                        <div class="flex-wrap">Calling <i class="java-code">read()</i> method on an <i
+                                                class="java-code">InputStream</i> object.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_168" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_168">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option C is correct. <i class="java-code">notify()</i> - wakes up a single
+                                            thread that is waiting on this object's monitor.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_168">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_168">
+                                    <textarea class="bix-report-txt" data-qid="168" name="txtBixReport_168"
+                                        id="txtBixReport_168" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_168" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_168"
+                                            data-sid="13" data-qid="168" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- ----------------------------- -->
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0">Finding the output</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> 
+<span class="token punctuation">{</span>
+<span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" MyThread"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" baz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestThreads</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+        <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    t<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_183">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_183"><span id="lnkOptionLink_A_183"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_183">
+                                        <div class="flex-wrap">foo</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_183"><span id="lnkOptionLink_B_183"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_183">
+                                        <div class="flex-wrap">MyThread foo</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_183"><span id="lnkOptionLink_C_183"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_183">
+                                        <div class="flex-wrap">MyThread bar</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_183"><span id="lnkOptionLink_D_183"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_183">
+                                        <div class="flex-wrap">foo bar</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_183" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_183">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct because in the first line of main we're constructing an
+                                            instance of an anonymous inner class extending from <i
+                                                class="java-code">MyThread</i>. So the <i class="java-code">MyThread</i>
+                                            constructor runs and prints "MyThread". The next statement in main invokes
+                                            <i class="java-code">start()</i> on the new thread instance, which causes
+                                            the overridden <i class="java-code">run()</i> method (the <i
+                                                class="java-code">run()</i> method defined in the anonymous inner class)
+                                            to be invoked, which prints "foo"
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_183">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_183">
+                                    <textarea class="bix-report-txt" data-qid="183" name="txtBixReport_183"
+                                        id="txtBixReport_183" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_183" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_183"
+                                            data-sid="13" data-qid="183" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> 
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">MyThread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"one. "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"two. "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Thread "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_179">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_179"><span id="lnkOptionLink_A_179"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_179">
+                                        <div class="flex-wrap">Compilation fails</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_179"><span id="lnkOptionLink_B_179"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_179">
+                                        <div class="flex-wrap">An exception occurs at runtime.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_179"><span id="lnkOptionLink_C_179"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_179">
+                                        <div class="flex-wrap">It prints "Thread one. Thread two."</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_179"><span id="lnkOptionLink_D_179"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_179">
+                                        <div class="flex-wrap">The output cannot be determined.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_179" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_179">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>When the <i class="java-code">start()</i> method is attempted a second time
+                                            on a single Thread object, the method will throw an <i
+                                                class="java-code">IllegalThreadStateException</i> (you will not need to
+                                            know this exception name for the exam). Even if the thread has finished
+                                            running, it is still illegal to call <i class="java-code">start()</i> again.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_179">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_179">
+                                    <textarea class="bix-report-txt" data-qid="179" name="txtBixReport_179"
+                                        id="txtBixReport_179" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_179" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_179"
+                                            data-sid="13" data-qid="179" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> 
+<span class="token punctuation">{</span> 
+<span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">super</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Inside Thread "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">class</span> <span class="token class-name">MyRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" Inside Runnable"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">class</span> <span class="token class-name">Test</span> 
+<span class="token punctuation">{</span>  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_193">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_193"><span id="lnkOptionLink_A_193"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_193">
+                                        <div class="flex-wrap">Prints "Inside Thread Inside Thread"</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_193"><span id="lnkOptionLink_B_193"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_193">
+                                        <div class="flex-wrap">Prints "Inside Thread Inside Runnable"</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_193"><span id="lnkOptionLink_C_193"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_193">
+                                        <div class="flex-wrap">Does not compile</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_193"><span id="lnkOptionLink_D_193"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_193">
+                                        <div class="flex-wrap">Throws exception at runtime</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_193" value="A">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_193">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-a-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>If a Runnable object is passed to the Thread constructor, then the run method
+                                            of the <i class="java-code">Thread</i> class will invoke the run method of
+                                            the <i class="java-code">Runnable</i> object.</p>
+                                        <p>In this case, however, the run method in the <i class="java-code">Thread</i>
+                                            class is overridden by the run method in <i class="java-code">MyThread</i>
+                                            class. Therefore the <i class="java-code">run()</i> method in <i
+                                                class="java-code">MyRunnable</i> is never invoked.</p>
+                                        <p>Both times, the <i class="java-code">run()</i> method in <i
+                                                class="java-code">MyThread</i> is invoked instead.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_193">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_193">
+                                    <textarea class="bix-report-txt" data-qid="193" name="txtBixReport_193"
+                                        id="txtBixReport_193" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_193" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_193"
+                                            data-sid="13" data-qid="193" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">class</span> s1 <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token keyword">int</span> <span class="token function">addX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>x<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span><span class="token punctuation">}</span> 
+<span class="token keyword">int</span> <span class="token function">addY</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>y<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token keyword">return</span> y<span class="token punctuation">;</span><span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">addX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token function">addY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    s1 run1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">s1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    s1 run2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">s1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">Thread</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>run1<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">Thread</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>run2<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_186">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_186"><span id="lnkOptionLink_A_186"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_186">
+                                        <div class="flex-wrap">Compile time Error: There is no start() method</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_186"><span id="lnkOptionLink_B_186"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_186">
+                                        <div class="flex-wrap">Will print in this order: <i class="java-code">1 1 2 2 3
+                                                3 4 4 5 5...</i></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_186"><span id="lnkOptionLink_C_186"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_186">
+                                        <div class="flex-wrap">Will print but not exactly in an order (e.g: <i
+                                                class="java-code">1 1 2 2 1 1 3 3...</i>)</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_186"><span id="lnkOptionLink_D_186"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_186">
+                                        <div class="flex-wrap">Will print in this order: <i class="java-code">1 2 3 4 5
+                                                6... 1 2 3 4 5 6...</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_186" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_186">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Both threads are operating on different sets of instance variables. If you
+                                            modify the code of the <i class="java-code">run()</i> method to print the
+                                            thread name it will help to clarify the output:</p>
+                                        <span class="java-code">public void run() <br>
+                                            { <br>
+                                            for(int i = 0; i &lt; 10; i++) <br><br>
+                                            System.out.println(<br>
+                                            Thread.currentThread().getName() + ": " + addX() + " " + addY() <br>
+                                            ); <br><br>
+                                            }
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_186">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_186">
+                                    <textarea class="bix-report-txt" data-qid="186" name="txtBixReport_186"
+                                        id="txtBixReport_186" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_186" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_186"
+                                            data-sid="13" data-qid="186" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">What will be the output of the program?
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Q126</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> 
+<span class="token punctuation">{</span> 
+<span class="token keyword">private</span> <span class="token keyword">int</span> x<span class="token punctuation">;</span> 
+<span class="token keyword">private</span> <span class="token keyword">int</span> y<span class="token punctuation">;</span> 
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token class-name">Q126</span> that <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Q126</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>that<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 8 */</span>
+    <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>that<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Line 9 */</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token comment">/* Line 11 */</span>
+<span class="token punctuation">{</span> 
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token comment">/* Line 13 */</span>
+    <span class="token punctuation">{</span> 
+        x<span class="token operator">++</span><span class="token punctuation">;</span> 
+        y<span class="token operator">++</span><span class="token punctuation">;</span> 
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x = "</span> <span class="token operator">+</span> x <span class="token operator">+</span> <span class="token string">"y = "</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_191">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_191"><span id="lnkOptionLink_A_191"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_191">
+                                        <div class="flex-wrap">An error at line 11 causes compilation to fail</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_191"><span id="lnkOptionLink_B_191"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_191">
+                                        <div class="flex-wrap">Errors at lines 8 and 9 cause compilation to fail.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_191"><span id="lnkOptionLink_C_191"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_191">
+                                        <div class="flex-wrap">The program prints pairs of values for <i
+                                                class="java-code">x</i> and <i class="java-code">y</i> that might not
+                                            always be the same on the same line (for example, "<i class="java-code">x=2,
+                                                y=1</i>")</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_191"><span id="lnkOptionLink_D_191"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_191">
+                                        <div class="flex-wrap">The program prints pairs of values for <i
+                                                class="java-code">x</i> and <i class="java-code">y</i> that are always
+                                            the same on the same line (for example, "<i class="java-code">x=1, y=1</i>".
+                                            In addition, each value appears once (for example, "<i
+                                                class="java-code">x=1, y=1</i>" followed by "<i class="java-code">x=2,
+                                                y=2</i>")</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_191" value="D">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_191">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-d-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The synchronized code is the key to answering this question. Because <i
+                                                class="java-code">x</i> and <i class="java-code">y</i> are both
+                                            incremented inside the synchronized method they are always incremented
+                                            together. Also keep in mind that the two threads share the same reference to
+                                            the <i class="java-code">Q126</i> object.</p>
+
+                                        <p>Also note that because of the infinite loop at line 13, only one thread ever
+                                            gets to execute.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_191">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_191">
+                                    <textarea class="bix-report-txt" data-qid="191" name="txtBixReport_191"
+                                        id="txtBixReport_191" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_191" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_191"
+                                            data-sid="13" data-qid="191" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- --------------------------------------- -->
+                    <div class="card-style" style="height: auto !important;">
+                        <div class="exercise mb-3">
+                            <div class="h5 w-100 mb-3 p-0">Pointing out the correct statements</div>
+
+                        </div>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno1" rowspan="2">1.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which statement is true?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_196">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_196"><span id="lnkOptionLink_A_196"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_196">
+                                        <div class="flex-wrap">A static method cannot be synchronized.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_196"><span id="lnkOptionLink_B_196"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_196">
+                                        <div class="flex-wrap">If a class has synchronized code, multiple threads can
+                                            still access the nonsynchronized code.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_196"><span id="lnkOptionLink_C_196"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_196">
+                                        <div class="flex-wrap">Variables can be protected from concurrent access
+                                            problems by marking them with the <i class="java-code">synchronized</i>
+                                            keyword.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_196"><span id="lnkOptionLink_D_196"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_196">
+                                        <div class="flex-wrap">When a thread sleeps, it releases its locks.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_196" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_196">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>B is correct because multiple threads are allowed to enter nonsynchronized
+                                            code, even within a class that has some synchronized methods.</p>
+                                        <p>A is incorrect because static methods can be synchronized; they synchronize
+                                            on the lock on the instance of class <i
+                                                class="java-code">java.lang.Class</i> that represents the class type.
+                                        </p>
+                                        <p>C is incorrect because only methodsâ€”not variablesâ€”can be marked
+                                            synchronized.</p>
+                                        <p>D is incorrect because a sleeping thread still maintains its locks.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_196">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_196">
+                                    <textarea class="bix-report-txt" data-qid="196" name="txtBixReport_196"
+                                        id="txtBixReport_196" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_196" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_196"
+                                            data-sid="13" data-qid="196" data-qno="1" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno2" rowspan="2">2.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which two can be used to create a new
+                                    Thread?
+                                    <ol class="java-ol-1234">
+                                        <li>Extend <i class="java-code">java.lang.Thread</i> and override the <i
+                                                class="java-code">run()</i> method.</li>
+                                        <li>Extend <i class="java-code">java.lang.Runnable</i> and override the <i
+                                                class="java-code">start()</i> method.</li>
+                                        <li>Implement <i class="java-code">java.lang.Thread</i> and implement the <i
+                                                class="java-code">run()</i> method.</li>
+                                        <li>Implement <i class="java-code">java.lang.Runnable</i> and implement the <i
+                                                class="java-code">run()</i> method.</li>
+                                        <li>Implement <i class="java-code">java.lang.Thread</i> and implement the <i
+                                                class="java-code">start()</i> method.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_200">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_200"><span id="lnkOptionLink_A_200"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_200">
+                                        <div class="flex-wrap">1 and 2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_200"><span id="lnkOptionLink_B_200"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_200">
+                                        <div class="flex-wrap">2 and 3</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_200"><span id="lnkOptionLink_C_200"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_200">
+                                        <div class="flex-wrap">1 and 4</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_200"><span id="lnkOptionLink_D_200"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_200">
+                                        <div class="flex-wrap">3 and 4</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_200" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_200">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>There are two ways of creating a thread; extend (sub-class) the <i
+                                                class="java-code">Thread</i> class and implement the <i
+                                                class="java-code">Runnable</i> interface. For both of these ways you
+                                            must implement (override and not overload) the <i class="java-code">public
+                                                void run()</i> method.</p>
+                                        <p>(1) is correct - Extending the Thread class and overriding its run method is
+                                            a valid procedure.</p>
+                                        <p>(4) is correct - You must implement interfaces, and runnable is an interface
+                                            and you must also include the run method.</p>
+                                        <p>(2) is wrong - Runnable is an interface which implements not Extends. Gives
+                                            the error: (No interface expected here)</p>
+                                        <p>(3) is wrong - You cannot implement <i class="java-code">java.lang.Thread</i>
+                                            (This is a Class). (Implements Thread, gives the error: Interface expected).
+                                            Implements expects an interface.</p>
+                                        <p>(5) is wrong - You cannot implement <i class="java-code">java.lang.Thread</i>
+                                            (This is a class). You Extend classes, and Implement interfaces. (Implements
+                                            Thread, gives the error: Interface expected)</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_200">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_200">
+                                    <textarea class="bix-report-txt" data-qid="200" name="txtBixReport_200"
+                                        id="txtBixReport_200" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_200" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_200"
+                                            data-sid="13" data-qid="200" data-qno="2" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno3" rowspan="2">3.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which statement is true?</div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_198">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_198"><span id="lnkOptionLink_A_198"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_198">
+                                        <div class="flex-wrap">If only one thread is blocked in the wait method of an
+                                            object, and another thread executes the modify on that same object, then the
+                                            first thread immediately resumes execution.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_198"><span id="lnkOptionLink_B_198"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_198">
+                                        <div class="flex-wrap">If a thread is blocked in the wait method of an object,
+                                            and another thread executes the notify method on the same object, it is
+                                            still possible that the first thread might never resume execution.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_198"><span id="lnkOptionLink_C_198"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_198">
+                                        <div class="flex-wrap">If a thread is blocked in the wait method of an object,
+                                            and another thread executes the notify method on the same object, then the
+                                            first thread definitely resumes execution as a direct and sole consequence
+                                            of the notify call.</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_198"><span id="lnkOptionLink_D_198"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_198">
+                                        <div class="flex-wrap">If two threads are blocked in the wait method of one
+                                            object, and another thread executes the notify method on the same object,
+                                            then the first thread that executed the wait call first definitely resumes
+                                            execution as a direct and sole consequence of the notify call.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_198" value="B">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_198">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-b-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Option B is correct - The notify method only wakes the thread. It does not
+                                            guarantee that the thread will run.</p>
+                                        <p>Option A is incorrect - just because another thread activates the modify
+                                            method in A this does not mean that the thread will automatically resume
+                                            execution</p>
+                                        <p>Option C is incorrect - This is incorrect because as said in Answer B notify
+                                            only wakes the thread but further to this once it is awake it goes back into
+                                            the stack and awaits execution therefore it is not a "direct and sole
+                                            consequence of the notify call"</p>
+                                        <p></p>
+                                        <p>Option D is incorrect - The notify method wakes one waiting thread up. If
+                                            there are more than one sleeping threads then the choice as to which thread
+                                            to wake is made by the machine rather than you therefore you cannot
+                                            guarantee that the notify'ed thread will be the first waiting thread.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_198">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_198">
+                                    <textarea class="bix-report-txt" data-qid="198" name="txtBixReport_198"
+                                        id="txtBixReport_198" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_198" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_198"
+                                            data-sid="13" data-qid="198" data-qno="3" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno4" rowspan="2">4.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">Which two statements are true?
+                                    <ol class="java-ol-1234">
+                                        <li>Deadlock will not occur if <i class="java-code">wait()</i>/<i
+                                                class="java-code">notify()</i> is used</li>
+                                        <li>A thread will resume execution as soon as its sleep duration expires.</li>
+                                        <li>Synchronization can prevent two objects from being accessed by the same
+                                            thread.</li>
+                                        <li>The <i class="java-code">wait()</i> method is overloaded to accept a
+                                            duration.</li>
+                                        <li>The <i class="java-code">notify()</i> method is overloaded to accept a
+                                            duration.</li>
+                                        <li>Both <i class="java-code">wait()</i> and <i class="java-code">notify()</i>
+                                            must be called from a synchronized context.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_199">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_199"><span id="lnkOptionLink_A_199"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_199">
+                                        <div class="flex-wrap">1 and 2</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_199"><span id="lnkOptionLink_B_199"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_199">
+                                        <div class="flex-wrap">3 and 5</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_199"><span id="lnkOptionLink_C_199"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_199">
+                                        <div class="flex-wrap">4 and 6</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_199"><span id="lnkOptionLink_D_199"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_199">
+                                        <div class="flex-wrap">1 and 3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_199" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_199">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>Statements (4) and (6) are correct. (4) is correct because the <i
+                                                class="java-code">wait()</i> method is overloaded to accept a wait
+                                            duration in milliseconds. If the thread has not been notified by the time
+                                            the wait duration has elapsed, then the thread will move back to runnable
+                                            even without having been notified.</p>
+                                        <p>(6) is correct because <i class="java-code">wait()</i>/<i
+                                                class="java-code">notify()</i>/<i class="java-code">notifyAll()</i> must
+                                            all be called from within a synchronized, context. A thread must own the
+                                            lock on the object its invoking
+                                            <i class="java-code">wait()</i>/<i class="java-code">notify()</i>/<i
+                                                class="java-code">notifyAll()</i> on.
+                                        </p>
+                                        <p>(1) is incorrect because <i class="java-code">wait()</i>/<i
+                                                class="java-code">notify()</i> will not prevent deadlock.</p>
+                                        <p>(2) is incorrect because a sleeping thread will return to runnable when it
+                                            wakes up, but it might not necessarily resume execution right away. To
+                                            resume executing, the newly awakened thread must still be moved from
+                                            runnable to running by the scheduler.</p>
+                                        <p>(3) is incorrect because synchronization prevents two or more threads from
+                                            accessing the same object.</p>
+                                        <p>(5) is incorrect because <i class="java-code">notify()</i> is not overloaded
+                                            to accept a duration.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_199">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_199">
+                                    <textarea class="bix-report-txt" data-qid="199" name="txtBixReport_199"
+                                        id="txtBixReport_199" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_199" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_199"
+                                            data-sid="13" data-qid="199" data-qno="4" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bix-div-container">
+                            <div class="d-flex flex-row align-items-top justify-content-start">
+                                <div class="bix-td-qno" id="qno5" rowspan="2">5.</div>
+                                <div class="bix-td-qtxt table-responsive w-100">The following block of code creates a
+                                    Thread using a Runnable target:
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">Runnable</span> target <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Thread</span> myThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+                                    Which of the following classes can be used to create the target, so that the
+                                    preceding code compiles correctly?
+                                </div>
+                            </div>
+                            <div class="bix-tbl-options" id="tblOption_201">
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_A_201"><span id="lnkOptionLink_A_201"
+                                            class="mdi mdi-alpha-a-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_A_201">
+                                        <div class="flex-wrap">public class MyRunnable extends Runnable{public void
+                                            run(){}}</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_B_201"><span id="lnkOptionLink_B_201"
+                                            class="mdi mdi-alpha-b-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_B_201">
+                                        <div class="flex-wrap">public class MyRunnable extends Object{public void
+                                            run(){}}</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_C_201"><span id="lnkOptionLink_C_201"
+                                            class="mdi mdi-alpha-c-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_C_201">
+                                        <div class="flex-wrap">public class MyRunnable implements Runnable{public void
+                                            run(){}}</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-top bix-opt-row">
+                                    <div class="bix-td-option" id="tdOptionNo_D_201"><span id="lnkOptionLink_D_201"
+                                            class="mdi mdi-alpha-d-circle-outline"></span></div>
+                                    <div class="bix-td-option-val d-flex flex-row align-items-center"
+                                        id="tdOptionDt_D_201">
+                                        <div class="flex-wrap">public class MyRunnable implements Runnable{void run(){}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bix-td-miscell">
+
+                                <input type="hidden" class="jq-hdnakq" id="hdnAnswer_201" value="C">
+
+                                <div class="bix-div-answer collapse " id="divAnswer_201">
+                                    <div class="bix-ans-option d-flex flex-row align-items-center">
+                                        <div class="pt-1"><span class="mx-green mx-bold">Answer:</span> Option</div>
+                                        <div class="ps-1 pt-1"><span class="mdi mdi-alpha-c-circle-outline"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="mx-green mx-bold explain-lablel">Explanation:</div>
+                                    <div class="bix-ans-description table-responsive">
+                                        <p>The class correctly implements the Runnable interface with a legal <i
+                                                class="java-code">public void run()</i> method.</p>
+                                        <p>Option A is incorrect because interfaces are not extended; they are
+                                            implemented.</p>
+                                        <p>Option B is incorrect because even though the class would compile and it has
+                                            a valid <i class="java-code">public void run()</i> method, it does not
+                                            implement the <i class="java-code">Runnable</i> interface, so the compiler
+                                            would complain when creating a Thread with an instance of it.</p>
+                                        <p>Option D is incorrect because the <i class="java-code">run()</i> method must
+                                            be <i class="java-code">public</i>.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="bix-div-workspace collapse" id="divWorkspace_201">
+                                    <textarea rows="10" placeholder="Workspace"></textarea>
+                                </div>
+
+                                <div class="bix-div-report collapse text-end" id="divReport_201">
+                                    <textarea class="bix-report-txt" data-qid="201" name="txtBixReport_201"
+                                        id="txtBixReport_201" rows="8" maxlength="1000" placeholder="The report text length is at least 10 characters.
+
+
+
+
+Name :
+Email  : "></textarea>
+                                    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+                                        <div id="ques_resp_201" class="ms-auto resp-div d-flex align-items-center">
+                                        </div>
+                                        <input class="ms-3 bix-btn bix-btn-light bix-report-btn" id="btnBixReport_201"
+                                            data-sid="13" data-qid="201" data-qno="5" type="button" value="Send Report"
+                                            disabled="">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center"><!-- ResBottom -->
+                            <script async=""
+                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0191447310372013"
+                                crossorigin="anonymous" data-checked-head="true"></script>
+
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                        <nav aria-label="Page navigation">
+
+                        </nav>
+                    </div>
+                    <!-- -------------------- -->
+                </div>
+    </main>
+
+    <script src="https://www.indiabix.com/_files/js/util/bootstrap.bundle.min.js"></script>
+    <script src="https://www.indiabix.com/_files/js/main.min.js?ver=1.0"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+    <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"
+        data-ad-status="unfilled">
+        <div id="aswift_0_host"
+            style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
+            <iframe id="aswift_0" name="aswift_0"
+                style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                scrolling="no"
+                src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0191447310372013&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1712043588&amp;plat=1%3A16777216%2C2%3A16777216%2C3%3A16%2C4%3A16%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2FA11.1%2Fwww.indiabix.com%2Faptitude%2Fquestions-and-answers%2Findex.html&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTIyLjAuMjM2NS45MiIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuMTI5Il0sWyJOb3QoQTpCcmFuZCIsIjI0LjAuMC4wIl0sWyJNaWNyb3NvZnQgRWRnZSIsIjEyMi4wLjIzNjUuOTIiXV0sMF0.&amp;dt=1712125749846&amp;bpp=5&amp;bdt=199&amp;idt=107&amp;shv=r20240328&amp;mjsv=m202403280101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=673421660251&amp;frm=20&amp;pv=2&amp;ga_vid=2074399148.1712042278&amp;ga_sid=1712125750&amp;ga_hid=677183597&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1897&amp;bih=932&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C44798934%2C95325427%2C31082370%2C95320376%2C95328825&amp;oid=2&amp;pvsid=3907513776012983&amp;tmod=789056828&amp;wsm=1&amp;uas=0&amp;nvt=3&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1040%2C1912%2C932&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=149"
+                data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement"
+                data-load-complete="true"></iframe>
+        </div>
+    </ins><iframe name="googlefcInactive" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        name="googlefcLoaded" src="about:blank"
+        style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe
+        src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support-9
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <div id="my-extension-root" class="my-extension-root"
+        style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;">
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>
